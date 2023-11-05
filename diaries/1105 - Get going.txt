@@ -1,0 +1,15 @@
+-----------------------------------------
+date: 2023-11-05
+participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Read up "How to Access Mobility Data With API v2"
+    - https://opendatahub.readthedocs.io/en/latest/howto/mobility/getstarted.html
+- Create shared repository
+- Explore Java libraries to make HTTP requests
+
+Results:
+
+- Managed to get response from Mobility API using OkHttp Library
