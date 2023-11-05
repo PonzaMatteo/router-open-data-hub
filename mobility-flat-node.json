@@ -1,0 +1,282 @@
+[
+  {
+    "id": "Bicycle",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/Bicycle",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/Bicycle/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/Bicycle/*/latest"
+  },
+  {
+    "id": "Bicyclestationbay",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/Bicyclestationbay",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/Bicyclestationbay/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/Bicyclestationbay/*/latest"
+  },
+  {
+    "id": "BIKE_CHARGER",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/BIKE_CHARGER",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/BIKE_CHARGER/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/BIKE_CHARGER/*/latest"
+  },
+  {
+    "id": "BIKE_CHARGER_BAY",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/BIKE_CHARGER_BAY",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/BIKE_CHARGER_BAY/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/BIKE_CHARGER_BAY/*/latest"
+  },
+  {
+    "id": "BikeCounter",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/BikeCounter",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/BikeCounter/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/BikeCounter/*/latest"
+  },
+  {
+    "id": "BikeParking",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParking",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParking/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParking/*/latest"
+  },
+  {
+    "id": "BikeParkingBay",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParkingBay",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParkingBay/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParkingBay/*/latest"
+  },
+  {
+    "id": "BikeParkingLocation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParkingLocation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParkingLocation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/BikeParkingLocation/*/latest"
+  },
+  {
+    "id": "BikesharingStation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/BikesharingStation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/BikesharingStation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/BikesharingStation/*/latest"
+  },
+  {
+    "id": "BluetoothStation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/BluetoothStation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/BluetoothStation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/BluetoothStation/*/latest"
+  },
+  {
+    "id": "CarpoolingHub",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingHub",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingHub/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingHub/*/latest"
+  },
+  {
+    "id": "CarpoolingService",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingService",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingService/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingService/*/latest"
+  },
+  {
+    "id": "CarpoolingUser",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingUser",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingUser/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/CarpoolingUser/*/latest"
+  },
+  {
+    "id": "CarsharingCar",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/CarsharingCar",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/CarsharingCar/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/CarsharingCar/*/latest"
+  },
+  {
+    "id": "CarsharingStation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/CarsharingStation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/CarsharingStation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/CarsharingStation/*/latest"
+  },
+  {
+    "id": "CreativeIndustry",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/CreativeIndustry",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/CreativeIndustry/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/CreativeIndustry/*/latest"
+  },
+  {
+    "id": "Culture",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/Culture",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/Culture/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/Culture/*/latest"
+  },
+  {
+    "id": "EChargingPlug",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/EChargingPlug",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/EChargingPlug/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/EChargingPlug/*/latest"
+  },
+  {
+    "id": "EChargingStation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/EChargingStation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/EChargingStation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/EChargingStation/*/latest"
+  },
+  {
+    "id": "EnvironmentStation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/EnvironmentStation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/EnvironmentStation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/EnvironmentStation/*/latest"
+  },
+  {
+    "id": "Flight",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/Flight",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/Flight/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/Flight/*/latest"
+  },
+  {
+    "id": "LinkStation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/LinkStation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/LinkStation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/LinkStation/*/latest"
+  },
+  {
+    "id": "MeteoStation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/MeteoStation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/MeteoStation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/MeteoStation/*/latest"
+  },
+  {
+    "id": "Mobilestation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/Mobilestation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/Mobilestation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/Mobilestation/*/latest"
+  },
+  {
+    "id": "NOI-Place",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/NOI-Place",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/NOI-Place/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/NOI-Place/*/latest"
+  },
+  {
+    "id": "ON_DEMAND_ITINERARY",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_ITINERARY",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_ITINERARY/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_ITINERARY/*/latest"
+  },
+  {
+    "id": "ON_DEMAND_STOP",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_STOP",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_STOP/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_STOP/*/latest"
+  },
+  {
+    "id": "ON_DEMAND_VEHICLE",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_VEHICLE",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_VEHICLE/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/ON_DEMAND_VEHICLE/*/latest"
+  },
+  {
+    "id": "ParkingSensor",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/ParkingSensor",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/ParkingSensor/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/ParkingSensor/*/latest"
+  },
+  {
+    "id": "ParkingStation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/ParkingStation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/ParkingStation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/ParkingStation/*/latest"
+  },
+  {
+    "id": "RWISstation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/RWISstation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/RWISstation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/RWISstation/*/latest"
+  },
+  {
+    "id": "Streetstation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/Streetstation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/Streetstation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/Streetstation/*/latest"
+  },
+  {
+    "id": "traffic",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/traffic",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/traffic/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/traffic/*/latest"
+  },
+  {
+    "id": "TrafficForecast",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficForecast",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficForecast/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficForecast/*/latest"
+  },
+  {
+    "id": "TrafficSensor",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficSensor",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficSensor/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficSensor/*/latest"
+  },
+  {
+    "id": "Trafficstation",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/Trafficstation",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/Trafficstation/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/Trafficstation/*/latest"
+  },
+  {
+    "id": "TrafficStreetFactor",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficStreetFactor",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficStreetFactor/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/TrafficStreetFactor/*/latest"
+  },
+  {
+    "id": "VMS",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/VMS",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/VMS/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/VMS/*/latest"
+  },
+  {
+    "id": "WebStatistics",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/WebStatistics",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/WebStatistics/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/WebStatistics/*/latest"
+  },
+  {
+    "id": "WebStatstics",
+    "description": null,
+    "self.stations": "https://mobility.api.opendatahub.com/v2/flat,node/WebStatstics",
+    "self.stations+datatypes": "https://mobility.api.opendatahub.com/v2/flat,node/WebStatstics/*",
+    "self.stations+datatypes+measurements": "https://mobility.api.opendatahub.com/v2/flat,node/WebStatstics/*/latest"
+  }
+]
