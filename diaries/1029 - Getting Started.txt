@@ -1,0 +1,36 @@
+-----------------------------------------
+date: 2023-10-29
+participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- read project specifications
+- explore open data hub mobility and tourism APIs via the online Swagger
+
+Results:
+
+- We understood the project requirements and have an high level understanding of what we have to build
+- Our next steps will be to try out the APIs on a simple Java program
+
+
+--- Difficulties Found ---
+
+1. In the requirements section of the challenge specification it's mentioned:
+  
+  Create a component that invoke two classes that call Open
+  Data Hub APIs from different databases (these classes should
+  have the same interface and should be plugged in)
+
+We're unsure about what "plugged in" means in this context.
+We assume that it refers to dependency injection.
+
+2.  In the requirements section of the challenge specification it's mentioned:
+      
+  In case the parameters cannot be used to find the right API,
+  the component should invoke each implementation until have
+  some information returned.
+
+We're not entirely sure if that means returning the results from both the APIs or only
+from the first one.
+
