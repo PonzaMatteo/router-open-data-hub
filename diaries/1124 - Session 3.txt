@@ -1,0 +1,17 @@
+-----------------------------------------
+date: 2023-11-24
+participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Decided to use Go instead of Java for the project
+- Created a function that connect to Open Data Hub - Tourism Service to get accommodations in order to familiarize with
+  the language and the APIs
+
+Results:
+
+- Go Program that download accomodations from tourism service APIs
+
+
+--- Difficulties Found ---
