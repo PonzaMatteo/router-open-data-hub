@@ -1,54 +1,47 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"net/http"
 )
 
 func main() {
-	fmt.Println("Hello, world.")
 	getAccommodation()
 }
 
 type Response struct {
-	body   string
-	status int
+	body       string
+	statusCode int
 }
 
-func getAccommodation() int {
-
-	fmt.Println("Getting Accommodation...")
+func getAccommodation() (Response, error) {
 
 	accommodationUrl := "https://tourism.opendatahub.com/v1/Accommodation"
 
-	request, error := http.NewRequest("GET", accommodationUrl, nil)
+	request, err := http.NewRequest("GET", accommodationUrl, nil)
 
-	if error != nil {
-		fmt.Println(error)
+	if err != nil {
+		return Response{}, err
 	}
 
 	request.Header.Set("Content-Type", "application/json; charset=utf-8")
 
 	client := &http.Client{}
-	response, error := client.Do(request)
+	response, err := client.Do(request)
 
-	if error != nil {
-		fmt.Println(error)
+	if err != nil {
+		return Response{}, err
 	}
 
-	responseBody, error := io.ReadAll(response.Body)
+	responseBody, err := io.ReadAll(response.Body)
 
-	if error != nil {
-		fmt.Println(error)
+	if err != nil {
+		return Response{}, err
 	}
 
-	formattedData := string(responseBody)
-
-	fmt.Println("Status: ", response.Status)
-	fmt.Println("Response body: ", formattedData)
+	var result = Response{body: string(responseBody), statusCode: response.StatusCode}
 
 	// clean up memory after execution
 	defer response.Body.Close()
-	return response.StatusCode
+	return result, nil
 }
