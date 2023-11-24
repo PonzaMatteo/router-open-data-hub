@@ -1,0 +1,2482 @@
+{
+  "TotalResults": 10336,
+  "TotalPages": 1034,
+  "CurrentPage": 1,
+  "PreviousPage": null,
+  "NextPage": "https://tourism.opendatahub.com/v1/Accommodation?pagenumber=2&roominfo=1-18,18&bokfilter=hgv&msssource=sinfo&availabilitychecklanguage=en&detail=0&removenullvalues=false",
+  "Seed": null,
+  "Items": [
+    {
+      "Id": "5CEA544EE34639034F07B79D4AEEB603_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/5CEA544EE34639034F07B79D4AEEB603_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "5CEA544EE34639034F07B79D4AEEB603_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-11-16T00:23:34.3054276+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": false,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "BedBreakfast",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/BedBreakfast"
+      },
+      "Altitude": 1108,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.477851,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 1108,
+          "Latitude": 46.477851,
+          "Longitude": 11.369939,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.369939,
+      "OdhActive": true,
+      "Shortname": "1100 APARTMENT",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39100",
+          "City": "Bozen",
+          "Name": "1100 APARTMENT",
+          "Email": null,
+          "Phone": "+39 333 9014050",
+          "Mobile": null,
+          "Street": "Kohlern 1/C",
+          "Website": null,
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39100",
+          "City": "Bolzano Bozen",
+          "Name": "1100 APARTMENT",
+          "Email": null,
+          "Phone": "+39 333 9014050",
+          "Mobile": null,
+          "Street": "Kohlern Colle 1/C",
+          "Website": null,
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39100",
+          "City": "Bolzano",
+          "Name": "1100 APARTMENT",
+          "Email": null,
+          "Phone": "+39 333 9014050",
+          "Mobile": null,
+          "Street": "Colle 1/C",
+          "Website": null,
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "BedBreakfast",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-11-16T00:23:34.3054276+00:00",
+      "FirstImport": "2022-01-11T11:39:40.0250274",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "2suns",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/2suns"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": true,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "5228229451CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Bolzano/Bozen",
+            "de": "Bozen",
+            "en": "Bolzano/Bozen",
+            "fr": "Bolzano/Bozen",
+            "it": "Bolzano",
+            "nl": "Bolzano/Bozen",
+            "pl": "Bolzano/Bozen",
+            "ru": "Больцано/Bozen"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/5228229451CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633A1CC24E11D18F1B006097B8970B",
+          "Name": {
+            "cs": "Bolzano/Bozen a okolí",
+            "de": "Bozen und Umgebung",
+            "en": "Bolzano/Bozen and environs",
+            "fr": "Bolzano/Bozen et environs",
+            "it": "Bolzano e dintorni",
+            "nl": "Bolzano/Bozen en omgeving",
+            "pl": "Bolzano/Bozen i okolice",
+            "ru": "Больцано/Bozen и окрестности"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633A1CC24E11D18F1B006097B8970B"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD66351C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Kohlern/Colle",
+            "de": "Kohlern",
+            "en": "Colle/Kohlern",
+            "fr": "Colle/Kohlern",
+            "it": "Colle",
+            "nl": "Colle/Kohlern",
+            "pl": "Colle/Kohlern",
+            "ru": "Колле"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD66351C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "50FCFD4334A04DB087C1FD10ED864018",
+          "Name": {
+            "cs": "Bolzano/Bozen",
+            "de": "Bozen",
+            "en": "Bolzano/Bozen",
+            "fr": "Bolzano/Bozen",
+            "it": "Bolzano",
+            "nl": "Bolzano/Bozen",
+            "pl": "Bolzano/Bozen",
+            "ru": "Боцен/Bolzano"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/50FCFD4334A04DB087C1FD10ED864018"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "2suns",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "2657B7CBCB85380B253D2FBE28AF100E_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/2657B7CBCB85380B253D2FBE28AF100E_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "2657B7CBCB85380B253D2FBE28AF100E_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-11-24T01:24:43.1828856+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": true,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "BedBreakfast",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/BedBreakfast"
+      },
+      "Altitude": 322,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.615101,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 322,
+          "Latitude": 46.615101,
+          "Longitude": 11.143296,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.143296,
+      "OdhActive": true,
+      "Shortname": "1477 Reichhalter",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39011",
+          "City": "Lana",
+          "Name": "1477 Reichhalter",
+          "Email": null,
+          "Phone": "+39 0473 051050",
+          "Mobile": null,
+          "Street": "Metzgergasse 2",
+          "Website": "http://www.1477reichhalter.com",
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39011",
+          "City": "Lana",
+          "Name": "1477 Reichhalter",
+          "Email": null,
+          "Phone": "+39 0473 051050",
+          "Mobile": null,
+          "Street": "Metzgergasse 2",
+          "Website": "http://www.1477reichhalter.com",
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39011",
+          "City": "Lana",
+          "Name": "1477 Reichhalter",
+          "Email": null,
+          "Phone": "+39 0473 051050",
+          "Mobile": null,
+          "Street": "Via Macello 2",
+          "Website": "http://www.1477reichhalter.com",
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "BedBreakfast",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-11-24T01:24:43.1828856+00:00",
+      "AccoHGVInfo": null,
+      "FirstImport": "2018-03-24T01:35:05.7368394",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "3suns",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/3suns"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": false,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "522822B451CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Lana a okolí",
+            "de": "Lana und Umgebung",
+            "en": "Lana and environs",
+            "fr": "Lana et environs",
+            "it": "Lana e dintorni",
+            "nl": "Lana en omgeving",
+            "pl": "Lana i okolice",
+            "ru": "Лана и окрестности"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/522822B451CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633A20C24E11D18F1B006097B8970B",
+          "Name": {
+            "cs": "Meran/Merano a okolí",
+            "de": "Meran und Umgebung",
+            "en": "Meran/Merano and environs",
+            "fr": "Meran/Merano et environs",
+            "it": "Merano e dintorni",
+            "nl": "Meran/Merano en omgeving",
+            "pl": "Meran/Merano i okolice",
+            "ru": "Меран/Merano и окрестности"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633A20C24E11D18F1B006097B8970B"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD79551C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Lana/Lana",
+            "de": "Lana",
+            "en": "Lana/Lana",
+            "fr": "Lana/Lana",
+            "it": "Lana",
+            "nl": "Lana/Lana",
+            "pl": "Lana/Lana",
+            "ru": "Лана"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD79551C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "0EECEC93283E42488CBE0EB3B94CD339",
+          "Name": {
+            "cs": "Lana",
+            "de": "Lana",
+            "en": "Lana",
+            "fr": "Lana",
+            "it": "Lana",
+            "nl": "Lana",
+            "pl": "Lana",
+            "ru": "Лана"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/0EECEC93283E42488CBE0EB3B94CD339"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "3suns",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "5E4BEFD440200CE4732A7FA30897C402_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/5E4BEFD440200CE4732A7FA30897C402_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "5E4BEFD440200CE4732A7FA30897C402_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-11-24T01:27:57.0067071+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": false,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "BedBreakfast",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/BedBreakfast"
+      },
+      "Altitude": 956,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.902639,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 956,
+          "Latitude": 46.902639,
+          "Longitude": 11.461289,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.461289,
+      "OdhActive": true,
+      "Shortname": "164 apt.",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39049",
+          "City": "Wiesen",
+          "Name": "164 apt.",
+          "Email": null,
+          "Phone": "+39 349 3544750",
+          "Mobile": null,
+          "Street": "Hintere Gasse 164 B",
+          "Website": "http://www.164apt.com",
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39049",
+          "City": "Wiesen",
+          "Name": "164 apt.",
+          "Email": null,
+          "Phone": "+39 349 3544750",
+          "Mobile": null,
+          "Street": "Hintere Gasse 164 B",
+          "Website": "http://www.164apt.com",
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39049",
+          "City": "Prati di Vizze",
+          "Name": "164 apt.",
+          "Email": null,
+          "Phone": "+39 349 3544750",
+          "Mobile": null,
+          "Street": "Hintere Gasse 164 B",
+          "Website": "http://www.164apt.com",
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "BedBreakfast",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-11-24T01:27:57.0067071+00:00",
+      "AccoHGVInfo": null,
+      "FirstImport": "2022-07-12T12:27:27.8760211",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "3suns",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/3suns"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": true,
+      "ImageGallery": [
+        {
+          "Width": 2131,
+          "Height": 1598,
+          "License": "CC0",
+          "ValidTo": "2022-12-31T00:00:00",
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=e019fb049dd09fe52ce15d71361684e6",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com",
+            "en": "164apt.com",
+            "it": "164apt.com"
+          },
+          "ImageName": null,
+          "ImageTags": [
+            "Summer",
+            "Winter"
+          ],
+          "ValidFrom": "2022-01-01T00:00:00",
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 0,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=3f188b347e6c1d8de58026cf06a86c58",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Zimmer",
+            "en": "164apt.com - sleeping room",
+            "it": "164apt.com - camera da letto"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 2,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=76255a97af851c0d7cc633064517c6e1",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Wohnzimmer",
+            "en": "164apt.com - living room",
+            "it": "164apt.com - soggiorno"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 3,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=a79c0f4601e10fc25c9fe05ac7fbf87a",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Schlafzimmer",
+            "en": "164apt.com - bedroom",
+            "it": "164apt.com - camera da letto"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 4,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 2400,
+          "Height": 1600,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=a2f5667d380daaf34d7fc95f54e8880b",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Ausblick",
+            "en": "164apt.com - view",
+            "it": "164apt.com - vista"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 5,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 2400,
+          "Height": 1600,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=ba5da5a2f4f19e856a975d0bbe3327cc",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Schlafzimmer",
+            "en": "164apt.com - bedrom",
+            "it": "164apt.com - camera da leto"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 6,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 2400,
+          "Height": 1600,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=eb51d31fda8edc05ec18bf3c369092b7",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Eingang",
+            "en": "164apt.com - Entrance",
+            "it": "164apt.com - Entrata"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 7,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 2400,
+          "Height": 1600,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=49f70fd26a237adc3729fe8902d2058b",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Zimmer",
+            "en": "164apt.com - sleeping room",
+            "it": "164apt.com - camera da letto"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 8,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=db19e3be9833ad85a4af5fc413f802cb",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com",
+            "en": "164apt.com",
+            "it": "164apt.com"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 9,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=8591c28b35c091c0bb0ac7624d232e2d",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Küche",
+            "en": "164apt.com - kitchen",
+            "it": "164apt.com - cucina"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 10,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=4c29f84a503f42ded3f9cdf4910bc357",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Küche",
+            "en": "164apt.com - kitchen",
+            "it": "164apt.com - cucina"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 11,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1571,
+          "Height": 2357,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=852e45d362ef6c9ed7cbdf83c12a922a",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Gebäudeansicht",
+            "en": "164apt.com - Building view",
+            "it": "164apt.com -  Vista edificio"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 12,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=82c24daa4038bfb5e796be2b379a5f41",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Terrasse",
+            "en": "164apt.com - patio",
+            "it": "164apt.com - terrazza"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 13,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=0402a8e8a1c99fc451d5324ae0a968aa",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Terrasse",
+            "en": "164apt.com - patio",
+            "it": "164apt.com - terrazza"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 14,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 2400,
+          "Height": 1600,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=73426e4d5d9cd7a51a86e5eea84cd984",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Bad",
+            "en": "164apt.com - bath",
+            "it": "164apt.com -  bagno"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 15,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1600,
+          "Height": 2400,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=94b3a5fe73ad32ffaf0e355b5b85df57",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "164apt.com - Bad",
+            "en": "164apt.com - bath",
+            "it": "164apt.com - bagno"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 16,
+          "LicenseHolder": null
+        },
+        {
+          "Width": 1174,
+          "Height": 1920,
+          "License": "CC0",
+          "ValidTo": null,
+          "ImageUrl": "https://doc.lts.it/DocSite/ImageRender.aspx?ID=7a1a27dda61964e8903c278a34859555",
+          "CopyRight": "164apt.com",
+          "ImageDesc": {
+            "de": "Zimmerskizze",
+            "en": "Room sketch",
+            "it": "Schema apartamento"
+          },
+          "ImageName": null,
+          "ImageTags": null,
+          "ValidFrom": null,
+          "ImageTitle": {},
+          "ImageSource": null,
+          "IsInGallery": true,
+          "ImageAltText": {},
+          "ListPosition": 17,
+          "LicenseHolder": null
+        }
+      ],
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "522822FF51CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Sterzing/Vipiteno",
+            "de": "Sterzing, Pfitsch und Freienfeld",
+            "en": "Sterzing/Vipiteno",
+            "fr": "Sterzing/Vipiteno",
+            "it": "Vipiteno, Campo di Trens, Prati, Val di Vizze",
+            "nl": "Sterzing/Vipiteno",
+            "pl": "Sterzing/Vipiteno",
+            "ru": "Штерцинг/Vipiteno"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/522822FF51CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633A45B35F22E19F1A007077B8660A",
+          "Name": {
+            "cs": "Sterzing/Vipiteno a okolí",
+            "de": "Sterzing und Umgebung",
+            "en": "Sterzing/Vipiteno and environs",
+            "fr": "Sterzing/Vipiteno et ses environs",
+            "it": "Vipiteno e dintorni",
+            "nl": "Sterzing/Vipiteno en omgeving",
+            "pl": "Sterzing/Vipiteno i okolice",
+            "ru": "Штерцинг/Vipiteno и окрестности"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633A45B35F22E19F1A007077B8660A"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD9E651C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Wiesen/Prati",
+            "de": "Wiesen",
+            "en": "Prati/Wiesen",
+            "fr": "Prati/Wiesen",
+            "it": "Prati",
+            "nl": "Prati/Wiesen",
+            "pl": "Prati/Wiesen",
+            "ru": "Прати"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD9E651C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "F5ACB333279F42A58DC65C7466B02E5F",
+          "Name": {
+            "cs": "Pfitsch/Val di Vizze",
+            "de": "Pfitsch",
+            "en": "Pfitsch/Val di Vizze",
+            "fr": "Pfitsch/Val di Vizze",
+            "it": "Val di Vizze",
+            "nl": "Pfitsch/Val di Vizze",
+            "pl": "Pfitsch/Val di Vizze",
+            "ru": "Пфич/Val di Vizze"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/F5ACB333279F42A58DC65C7466B02E5F"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "3suns",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "14AF6F5E67CBEAC34F3223D8DE20D08D_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/14AF6F5E67CBEAC34F3223D8DE20D08D_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "14AF6F5E67CBEAC34F3223D8DE20D08D_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-05-24T12:49:40.8721418+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": false,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "BedBreakfast",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/BedBreakfast"
+      },
+      "Altitude": 308,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.679733,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 308,
+          "Latitude": 46.679733,
+          "Longitude": 11.149205,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.149205,
+      "OdhActive": true,
+      "Shortname": "18",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39012",
+          "City": "Meran",
+          "Name": "18",
+          "Email": null,
+          "Phone": "+39 339 1055598",
+          "Mobile": null,
+          "Street": "Laurinstr. 32",
+          "Website": null,
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39012",
+          "City": "Meran/Merano",
+          "Name": "18",
+          "Email": null,
+          "Phone": "+39 339 1055598",
+          "Mobile": null,
+          "Street": "Laurinstr. 32",
+          "Website": null,
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39012",
+          "City": "Merano",
+          "Name": "18",
+          "Email": null,
+          "Phone": "+39 339 1055598",
+          "Mobile": null,
+          "Street": "Via Laurin 32",
+          "Website": null,
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "BedBreakfast",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-05-24T12:49:40.8721418+00:00",
+      "FirstImport": "2022-04-28T05:14:02.87274",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "1sun",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/1sun"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": false,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "522822BE51CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Meran/Merano",
+            "de": "Meran",
+            "en": "Meran/Merano",
+            "fr": "Meran/Merano",
+            "it": "Merano",
+            "nl": "Meran/Merano",
+            "pl": "Meran/Merano",
+            "ru": "Меран/Merano"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/522822BE51CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633A20C24E11D18F1B006097B8970B",
+          "Name": {
+            "cs": "Meran/Merano a okolí",
+            "de": "Meran und Umgebung",
+            "en": "Meran/Merano and environs",
+            "fr": "Meran/Merano et environs",
+            "it": "Merano e dintorni",
+            "nl": "Meran/Merano en omgeving",
+            "pl": "Meran/Merano i okolice",
+            "ru": "Меран/Merano и окрестности"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633A20C24E11D18F1B006097B8970B"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD7ED51C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Meran/Merano",
+            "de": "Meran",
+            "en": "Merano/Meran",
+            "fr": "Merano/Meran",
+            "it": "Merano",
+            "nl": "Merano/Meran",
+            "pl": "Merano/Meran",
+            "ru": "Мерано"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD7ED51C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "418E5CC913764648802DD2BE30AD91AC",
+          "Name": {
+            "cs": "Meran/Merano",
+            "de": "Meran",
+            "en": "Meran/Merano",
+            "fr": "Meran/Merano",
+            "it": "Merano",
+            "nl": "Meran/Merano",
+            "pl": "Meran/Merano",
+            "ru": "Меран/Merano"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/418E5CC913764648802DD2BE30AD91AC"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "1sun",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "C93CE627A8497E697C657CF53028F9D2_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/C93CE627A8497E697C657CF53028F9D2_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "C93CE627A8497E697C657CF53028F9D2_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-09-14T17:30:24.080548+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": true,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "HotelPension",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/HotelPension"
+      },
+      "Altitude": 353,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.660809,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 353,
+          "Latitude": 46.660809,
+          "Longitude": 11.180298,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.180298,
+      "OdhActive": true,
+      "Shortname": "360 Grad - Bundeswehr Sozialwerk",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39012",
+          "City": "Meran",
+          "Name": "360 Grad - Bundeswehr Sozialwerk",
+          "Email": null,
+          "Phone": "+39 0473 232345",
+          "Mobile": null,
+          "Street": "Dantestr. 110",
+          "Website": "http://www.bundeswehr-sozialwerk.de",
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39012",
+          "City": "Meran / Merano",
+          "Name": "360 Grad - Bundeswehr Sozialwerk",
+          "Email": null,
+          "Phone": "+39 0473 232345",
+          "Mobile": null,
+          "Street": "Dantestr. 110",
+          "Website": "http://www.bundeswehr-sozialwerk.de",
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39012",
+          "City": "Merano",
+          "Name": "360 Grad - Bundeswehr Sozialwerk",
+          "Email": null,
+          "Phone": "+39 0473 232345",
+          "Mobile": null,
+          "Street": "Via Dante 110",
+          "Website": "http://www.bundeswehr-sozialwerk.de",
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "HotelPension",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-09-14T17:30:24.080548+00:00",
+      "FirstImport": "2017-03-17T02:05:13.4440981",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "Not categorized",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/Not%2520categorized"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": false,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "522822BE51CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Meran/Merano",
+            "de": "Meran",
+            "en": "Meran/Merano",
+            "fr": "Meran/Merano",
+            "it": "Merano",
+            "nl": "Meran/Merano",
+            "pl": "Meran/Merano",
+            "ru": "Меран/Merano"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/522822BE51CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633A20C24E11D18F1B006097B8970B",
+          "Name": {
+            "cs": "Meran/Merano a okolí",
+            "de": "Meran und Umgebung",
+            "en": "Meran/Merano and environs",
+            "fr": "Meran/Merano et environs",
+            "it": "Merano e dintorni",
+            "nl": "Meran/Merano en omgeving",
+            "pl": "Meran/Merano i okolice",
+            "ru": "Меран/Merano и окрестности"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633A20C24E11D18F1B006097B8970B"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD7ED51C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Meran/Merano",
+            "de": "Meran",
+            "en": "Merano/Meran",
+            "fr": "Merano/Meran",
+            "it": "Merano",
+            "nl": "Merano/Meran",
+            "pl": "Merano/Meran",
+            "ru": "Мерано"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD7ED51C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "418E5CC913764648802DD2BE30AD91AC",
+          "Name": {
+            "cs": "Meran/Merano",
+            "de": "Meran",
+            "en": "Meran/Merano",
+            "fr": "Meran/Merano",
+            "it": "Merano",
+            "nl": "Meran/Merano",
+            "pl": "Meran/Merano",
+            "ru": "Меран/Merano"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/418E5CC913764648802DD2BE30AD91AC"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "Not categorized",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "1AFE58256719B7F5050E8360ADC9DD93_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/1AFE58256719B7F5050E8360ADC9DD93_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "1AFE58256719B7F5050E8360ADC9DD93_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-10-17T23:20:18.5669492+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": false,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "BedBreakfast",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/BedBreakfast"
+      },
+      "Altitude": 250,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.34845,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 250,
+          "Latitude": 46.34845,
+          "Longitude": 11.29771,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.29771,
+      "OdhActive": true,
+      "Shortname": "5 Apartments",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39040",
+          "City": "Auer",
+          "Name": "5 Apartments",
+          "Email": null,
+          "Phone": "+39 335 1505912",
+          "Mobile": null,
+          "Street": "Mühlgasse 1",
+          "Website": null,
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39040",
+          "City": "Ora",
+          "Name": "5 Apartments",
+          "Email": null,
+          "Phone": "+39 335 1505912",
+          "Mobile": null,
+          "Street": "Via del Molino 1",
+          "Website": null,
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39040",
+          "City": "Ora",
+          "Name": "5 Apartments",
+          "Email": null,
+          "Phone": "+39 335 1505912",
+          "Mobile": null,
+          "Street": "Via del Molino 1",
+          "Website": null,
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "BedBreakfast",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-10-17T23:20:18.5669492+00:00",
+      "FirstImport": "2020-07-21T11:45:28.7517869",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "3suns",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/3suns"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": true,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "522822C851CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Castelfeder",
+            "de": "Castelfeder",
+            "en": "Castelfeder",
+            "fr": "Castelfeder",
+            "it": "Castelfeder",
+            "nl": "Castelfeder",
+            "pl": "Castelfeder",
+            "ru": "Кастельфедер"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/522822C851CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633B77A44F22E19F1B248099B9990B",
+          "Name": {
+            "cs": "Jihotyrolská vinařská stezka",
+            "de": "Südtiroler Weinstraße",
+            "en": "The South Tyrolean Wine Road",
+            "fr": "Route des vins du Sud-Tyrol",
+            "it": "Strada del Vino",
+            "nl": "Zuid-Tiroolse Wijnroute",
+            "pl": "Południowotyrolski szlak wina",
+            "ru": "Южнотирольская Винная дорога"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633B77A44F22E19F1B248099B9990B"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD82B51C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Auer/Ora",
+            "de": "Auer",
+            "en": "Ora/Auer",
+            "fr": "Ora/Auer",
+            "it": "Ora",
+            "nl": "Ora/Auer",
+            "pl": "Ora/Auer",
+            "ru": "Ора"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD82B51C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "5D4D46A9754B4332B73B0274380617E9",
+          "Name": {
+            "cs": "Auer/Ora",
+            "de": "Auer",
+            "en": "Auer/Ora",
+            "fr": "Auer/Ora",
+            "it": "Ora",
+            "nl": "Auer/Ora",
+            "pl": "Auer/Ora",
+            "ru": "Ауэр/Ora"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/5D4D46A9754B4332B73B0274380617E9"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "3suns",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "2DD4167A0732F1941C14A95BBB4F2466_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/2DD4167A0732F1941C14A95BBB4F2466_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "2DD4167A0732F1941C14A95BBB4F2466_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-09-14T16:15:01.8278203+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": false,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "BedBreakfast",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/BedBreakfast"
+      },
+      "Altitude": 567,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.707003,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 567,
+          "Latitude": 46.707003,
+          "Longitude": 11.660467,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.660467,
+      "OdhActive": true,
+      "Shortname": "A & A Apartments Resort",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39042",
+          "City": "Brixen",
+          "Name": "A & A Apartments Resort",
+          "Email": null,
+          "Phone": "+39 333 3682512",
+          "Mobile": null,
+          "Street": "Plosestrasse 48/A",
+          "Website": "http://www.aaapartments.it",
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39042",
+          "City": "Bressanone/Brixen",
+          "Name": "A & A Apartments Resort",
+          "Email": null,
+          "Phone": "+39 333 3682512",
+          "Mobile": null,
+          "Street": "via Plose/Plosestrasse 48/B",
+          "Website": "http://www.aaapartments.it",
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39042",
+          "City": "Bressanone",
+          "Name": "A & A Appartments Resort",
+          "Email": null,
+          "Phone": "+39 333 3682512",
+          "Mobile": null,
+          "Street": "via Plose 48/B",
+          "Website": "http://www.aaapartments.it",
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "BedBreakfast",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-09-14T16:15:01.8278203+00:00",
+      "FirstImport": "2017-08-12T01:54:07.9024467",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "4suns",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/4suns"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": true,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "5228229751CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Brixen/Bressanone",
+            "de": "Brixen",
+            "en": "Brixen/Bressanone",
+            "fr": "Brixen/Bressanone",
+            "it": "Bressanone",
+            "nl": "Brixen/Bressanone",
+            "pl": "Brixen/Bressanone",
+            "ru": "Бриксен/Bressanone"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/5228229751CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633A1DC24E11D18F1B006097B8970B",
+          "Name": {
+            "cs": "Brixen/Bressanone a okolí",
+            "de": "Brixen und Umgebung",
+            "en": "Brixen/Bressanone and environs",
+            "fr": "Brixen/Bressanone et environs",
+            "it": "Bressanone e dintorni",
+            "nl": "Brixen/Bressanone en omgeving",
+            "pl": "Brixen/Bressanone i okolice",
+            "ru": "Бриксен/Bressanone и окрестности"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633A1DC24E11D18F1B006097B8970B"
+        },
+        "DistrictInfo": {
+          "Id": "E90509F1ED274ECC8F330D63F86240B6",
+          "Name": {
+            "cs": "Brixen Umland/Bressanone dintorni",
+            "de": "Brixen Umland",
+            "en": "Bressanone dintorni/Brixen Umland",
+            "fr": "Bressanone dintorni/Brixen Umland",
+            "it": "Bressanone dintorni",
+            "nl": "Bressanone dintorni/Brixen Umland",
+            "pl": "Bressanone dintorni/Brixen Umland",
+            "ru": "Брессаноне динторни"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/E90509F1ED274ECC8F330D63F86240B6"
+        },
+        "MunicipalityInfo": {
+          "Id": "2B2B22E275734BB990DE4A3FC98C6A18",
+          "Name": {
+            "cs": "Brixen/Bressanone",
+            "de": "Brixen",
+            "en": "Brixen/Bressanone",
+            "fr": "Brixen/Bressanone",
+            "it": "Bressanone",
+            "nl": "Brixen/Bressanone",
+            "pl": "Brixen/Bressanone",
+            "ru": "Бриксен/Bressanone"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/2B2B22E275734BB990DE4A3FC98C6A18"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "4suns",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "2FC546282BCB11D4BAA8009027F15066_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/2FC546282BCB11D4BAA8009027F15066_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "2FC546282BCB11D4BAA8009027F15066_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-10-10T23:21:07.1848874+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": false,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "Farm",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/Farm"
+      },
+      "Altitude": 1030,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.7814,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 1030,
+          "Latitude": 46.7814,
+          "Longitude": 12.0464,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 12.0464,
+      "OdhActive": true,
+      "Shortname": "Aberlehof",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39030",
+          "City": "Niederrasen",
+          "Name": "Aberlehof",
+          "Email": null,
+          "Phone": "+39 0474 496165",
+          "Mobile": null,
+          "Street": "In der Linde 4",
+          "Website": null,
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39030",
+          "City": "Rasun di Sotto / Niederrasen",
+          "Name": "Aberlehof",
+          "Email": null,
+          "Phone": "+39 0474 496165",
+          "Mobile": null,
+          "Street": "In der Linde loc. 4",
+          "Website": null,
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39030",
+          "City": "Rasun di Sotto",
+          "Name": "Aberlehof",
+          "Email": null,
+          "Phone": "+39 0474 496165",
+          "Mobile": null,
+          "Street": "In der Linde loc. 4",
+          "Website": null,
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "Farm",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-10-10T23:21:07.1848874+00:00",
+      "FirstImport": "2014-08-29T12:35:45.5280476",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "2flowers",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/2flowers"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": true,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "522822D351CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Antholzertal/Valle Anterselva",
+            "de": "Antholzertal",
+            "en": "Antholzertal/Valle Anterselva",
+            "fr": "Antholzertal/Valle Anterselva",
+            "it": "Rasun in Valle di Anterselva",
+            "nl": "Antholzertal/Valle Anterselva",
+            "pl": "Antholzertal/Valle Anterselva",
+            "ru": "Антхольцерталь/Rasen in Valle di Anterselva"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/522822D351CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633B28A24E11D18F1B007088B8570A",
+          "Name": {
+            "cs": "Kronplatz/Plan de Corones",
+            "de": "Dolomitenregion Kronplatz",
+            "en": "Dolomites Region Kronplatz/Plan de Corones",
+            "fr": "Kronplatz/Plan de Corones",
+            "it": "Regione dolomitica Plan de Corones",
+            "nl": "Kronplatz/Plan de Corones",
+            "pl": "Urlop w Bruneck i okolicach",
+            "ru": "Кронплатц/Plan de Corones"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633B28A24E11D18F1B007088B8570A"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD87951C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Niederrasen/Rasun di Sotto",
+            "de": "Niederrasen",
+            "en": "Rasun di Sotto/Niederrasen",
+            "fr": "Rasun di Sotto/Niederrasen",
+            "it": "Rasun di Sotto",
+            "nl": "Rasun di Sotto/Niederrasen",
+            "pl": "Rasun di Sotto/Niederrasen",
+            "ru": "Разун ди Сотто"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD87951C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "F27E773C3D334208B21F67148ADA1A04",
+          "Name": {
+            "cs": "Rasen-Antholz/Rasun Anterselva",
+            "de": "Rasen-Antholz",
+            "en": "Rasen-Antholz/Rasun Anterselva",
+            "fr": "Rasen-Antholz/Rasun Anterselva",
+            "it": "Rasun Anterselva",
+            "nl": "Rasen-Antholz/Rasun Anterselva",
+            "pl": "Rasen-Antholz/Rasun Anterselva",
+            "ru": "Разен-Антхольц/Rasun Anterselva"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/F27E773C3D334208B21F67148ADA1A04"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "2flowers",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "0A140305173D4B7A972E43EFA7A67AF3_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/0A140305173D4B7A972E43EFA7A67AF3_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "0A140305173D4B7A972E43EFA7A67AF3_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-11-24T10:10:34.5487235+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": true,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "HotelPension",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/HotelPension"
+      },
+      "Altitude": 1100,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.5684,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 1100,
+          "Latitude": 46.5684,
+          "Longitude": 11.5647,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.5647,
+      "OdhActive": true,
+      "Shortname": "ABINEA Dolomiti Romantic SPA Hotel",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39040",
+          "City": "Kastelruth",
+          "Name": "ABINEA Dolomiti Romantic SPA Hotel",
+          "Email": null,
+          "Phone": "+39 0471 707237",
+          "Mobile": null,
+          "Street": "Paniderstr. 21/1",
+          "Website": "http://www.abinea.com",
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39040",
+          "City": "Kastelruth",
+          "Name": "ABINEA Dolomiti Romantic SPA Hotel",
+          "Email": null,
+          "Phone": "+39 0471 707237",
+          "Mobile": null,
+          "Street": "Paniderstr. 21/1",
+          "Website": "http://www.abinea.com",
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39040",
+          "City": "Castelrotto",
+          "Name": "ABINEA Dolomiti Romantic SPA Hotel",
+          "Email": null,
+          "Phone": "+39 0471 707237",
+          "Mobile": null,
+          "Street": "Via Panider 21/1",
+          "Website": "http://www.abinea.com",
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "HotelPension",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-11-24T10:10:34.5487235+00:00",
+      "AccoHGVInfo": null,
+      "FirstImport": "2014-08-29T11:57:48.1183294",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "4stars",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/4stars"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": false,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "5228229D51CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Kastelruth/Castelrotto",
+            "de": "Kastelruth",
+            "en": "Kastelruth/Castelrotto",
+            "fr": "Kastelruth/Castelrotto",
+            "it": "Castelrotto",
+            "nl": "Kastelruth/Castelrotto",
+            "pl": "Kastelruth/Castelrotto",
+            "ru": "Кастельрут/Castelrotto"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/5228229D51CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633A27C24E11D18F1B006097B8970B",
+          "Name": {
+            "cs": "Oblast Seiser Alm Dolomity",
+            "de": "Dolomitenregion Seiser Alm",
+            "en": "Dolomites Region Seiser Alm",
+            "fr": "Région des Dolomites Seiser Alm",
+            "it": "Regione dolomitica Alpe di Siusi",
+            "nl": "Dolomietenregio Seiser Alm",
+            "pl": "Region Seiser Alm w Dolomitach",
+            "ru": "Регион Зайзер-Альм, Доломиты"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633A27C24E11D18F1B006097B8970B"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD6EB51C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Kastelruth/Castelrotto",
+            "de": "Kastelruth",
+            "en": "Castelrotto/Kastelruth",
+            "fr": "Castelrotto/Kastelruth",
+            "it": "Castelrotto",
+            "nl": "Castelrotto/Kastelruth",
+            "pl": "Castelrotto/Kastelruth",
+            "ru": "Кастельротто"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD6EB51C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "2119D9D1C4744C4E9701BF837DF63FFD",
+          "Name": {
+            "cs": "Kastelruth/Castelrotto",
+            "de": "Kastelruth",
+            "en": "Kastelruth/Castelrotto",
+            "fr": "Kastelruth/Castelrotto",
+            "it": "Castelrotto",
+            "nl": "Kastelruth/Castelrotto",
+            "pl": "Kastelruth/Castelrotto",
+            "ru": "Кастельрут/Castelrotto"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/2119D9D1C4744C4E9701BF837DF63FFD"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "4stars",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    },
+    {
+      "Id": "9BB0774FE7EAADE46D2DC44188E7A94C_REDUCED",
+      "Self": "https://tourism.opendatahub.com/v1/Accommodation/9BB0774FE7EAADE46D2DC44188E7A94C_REDUCED",
+      "HgvId": null,
+      "_Meta": {
+        "Id": "9BB0774FE7EAADE46D2DC44188E7A94C_REDUCED",
+        "Type": "accommodation",
+        "Source": "lts",
+        "Reduced": true,
+        "LastUpdate": "2023-11-23T14:19:14.814117+00:00",
+        "UpdateInfo": {
+          "UpdatedBy": "lts.push.import",
+          "UpdateSource": "odh.importer"
+        }
+      },
+      "Active": true,
+      "Source": "LTS",
+      "Gpstype": "position",
+      "HasRoom": true,
+      "Mapping": {},
+      "ODHTags": [],
+      "SmgTags": null,
+      "AccoType": {
+        "Id": "HotelPension",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/HotelPension"
+      },
+      "Altitude": 0,
+      "BadgeIds": null,
+      "BoardIds": null,
+      "Features": null,
+      "Latitude": 46.843206,
+      "ThemeIds": null,
+      "GpsPoints": {
+        "position": {
+          "Gpstype": "position",
+          "Altitude": 0,
+          "Latitude": 46.843206,
+          "Longitude": 11.627955,
+          "AltitudeUnitofMeasure": "m"
+        }
+      },
+      "IsCamping": null,
+      "Longitude": 11.627955,
+      "OdhActive": true,
+      "Shortname": "abis Dolomites",
+      "SmgActive": true,
+      "AccoBadges": [],
+      "AccoBoards": [],
+      "AccoDetail": {
+        "de": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39037",
+          "City": "Vals",
+          "Name": "abis Dolomites",
+          "Email": null,
+          "Phone": "+39 0472 547116",
+          "Mobile": null,
+          "Street": "Gaisjochweg 1",
+          "Website": "http://www.hotelabis.com",
+          "Language": "de",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "en": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39037",
+          "City": "Valles",
+          "Name": "abis Dolomites",
+          "Email": null,
+          "Phone": "+39 0472 547116",
+          "Mobile": null,
+          "Street": "Via Gaisjoch 1",
+          "Website": "http://www.hotelabis.com",
+          "Language": "en",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        },
+        "it": {
+          "Fax": null,
+          "Vat": null,
+          "Zip": "39037",
+          "City": "Valles",
+          "Name": "abis Dolomites",
+          "Email": null,
+          "Phone": "+39 0472 547116",
+          "Mobile": null,
+          "Street": "Via Gaisjoch 1",
+          "Website": "http://www.hotelabis.com",
+          "Language": "it",
+          "Lastname": null,
+          "Longdesc": null,
+          "Firstname": null,
+          "Shortdesc": null,
+          "CountryCode": "IT",
+          "NameAddition": null
+        }
+      },
+      "AccoThemes": [],
+      "AccoTypeId": "HotelPension",
+      "DistrictId": null,
+      "IsBookable": false,
+      "LastChange": "2023-11-23T14:19:14.814117+00:00",
+      "AccoHGVInfo": null,
+      "FirstImport": "2019-11-11T14:52:12.6107817",
+      "HasLanguage": [
+        "de",
+        "it",
+        "en"
+      ],
+      "LicenseInfo": {
+        "Author": "",
+        "License": "CC0",
+        "ClosedData": false,
+        "LicenseHolder": "https://www.lts.it"
+      },
+      "PublishedOn": [
+        "suedtirol.info",
+        "idm-marketplace"
+      ],
+      "AccoCategory": {
+        "Id": "3stars",
+        "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/3stars"
+      },
+      "AccoRoomInfo": null,
+      "DistanceInfo": null,
+      "GastronomyId": null,
+      "HasApartment": false,
+      "ImageGallery": null,
+      "IsGastronomy": null,
+      "LocationInfo": {
+        "TvInfo": {
+          "Id": "522822D751CA11D18F1400A02427D15E",
+          "Name": {
+            "cs": "Gitschberg - Jochtal/Rio Pusteria",
+            "de": "Gitschberg - Jochtal",
+            "en": "Gitschberg-Jochtal/Rio Pusteria",
+            "fr": "Gitschberg-Jochtal/Rio Pusteria",
+            "it": "Rio Pusteria",
+            "nl": "Gitschberg-Jochtal/Rio Pusteria",
+            "pl": "Gitschberg-Jochtal/Rio Pusteria",
+            "ru": "Гичберг Йохталь/Rio Pusteria"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/522822D751CA11D18F1400A02427D15E"
+        },
+        "AreaInfo": null,
+        "RegionInfo": {
+          "Id": "D2633A1DC24E11D18F1B006097B8970B",
+          "Name": {
+            "cs": "Brixen/Bressanone a okolí",
+            "de": "Brixen und Umgebung",
+            "en": "Brixen/Bressanone and environs",
+            "fr": "Brixen/Bressanone et environs",
+            "it": "Bressanone e dintorni",
+            "nl": "Brixen/Bressanone en omgeving",
+            "pl": "Brixen/Bressanone i okolice",
+            "ru": "Бриксен/Bressanone и окрестности"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Region/D2633A1DC24E11D18F1B006097B8970B"
+        },
+        "DistrictInfo": {
+          "Id": "79CBD89551C911D18F1400A02427D15E",
+          "Name": {
+            "cs": "Vals/Valles",
+            "de": "Vals",
+            "en": "Valles/Vals",
+            "fr": "Valles/Vals",
+            "it": "Valles",
+            "nl": "Valles/Vals",
+            "pl": "Valles/Vals",
+            "ru": "Валлес"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/District/79CBD89551C911D18F1400A02427D15E"
+        },
+        "MunicipalityInfo": {
+          "Id": "E17020E4C5204781AABAF04587B0ADD5",
+          "Name": {
+            "cs": "Mühlbach/Rio di Pusteria",
+            "de": "Mühlbach",
+            "en": "Mühlbach/Rio di Pusteria",
+            "fr": "Mühlbach/Rio di Pusteria",
+            "it": "Rio di Pusteria",
+            "nl": "Mühlbach/Rio di Pusteria",
+            "pl": "Mühlbach/Rio di Pusteria",
+            "ru": "Мюльбах/Rio di Pusteria"
+          },
+          "Self": "https://tourism.opendatahub.com/v1/Municipality/E17020E4C5204781AABAF04587B0ADD5"
+        }
+      },
+      "MainLanguage": null,
+      "AccoCategoryId": "3stars",
+      "IndependentData": null,
+      "IsAccommodation": null,
+      "TourismVereinId": null,
+      "MssResponseShort": [],
+      "MarketingGroupIds": null,
+      "AccoBookingChannel": null,
+      "SpecialFeaturesIds": null,
+      "AccoSpecialFeatures": [],
+      "AltitudeUnitofMeasure": "m"
+    }
+  ]
+}
