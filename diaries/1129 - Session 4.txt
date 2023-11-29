@@ -1,0 +1,21 @@
+-----------------------------------------
+Date: 2023-11-29
+Participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Discussed on the implementation of the challenge
+- Created Tourism Service with generic GET request using TDD
+- Added Mock to tests, mocking external Tourism APIs
+- Added To do list
+
+Results:
+
+- Better idea of components that need to be built
+- Working serivce that connects GET request to Tourism APIs
+
+
+Difficulties Found:
+
+- Identified some questions to be clarified
