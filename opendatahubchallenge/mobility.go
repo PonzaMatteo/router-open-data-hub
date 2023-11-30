@@ -1,31 +1,34 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"net/http"
 )
 
-type TourismService struct {
+type TourismService struct{}
+type Message struct {
+	Body string
 }
 
-func (TourismService) ExecuteRequest(path string) Response {
+func (TourismService) ExecuteRequest(method string, path string, body []byte) Response {
 	tourismPath := "https://tourism.opendatahub.com" + path
 
-	response, err := getRequest(tourismPath)
+	response, err := request(tourismPath, method, body)
 	fmt.Println("Error", err)
 	return response
 }
 
-func getRequest(tourismPath string) (Response, error) {
+func request(tourismPath string, method string, body []byte) (Response, error) {
 
-	request, err := http.NewRequest("GET", tourismPath, nil)
+	request, err := http.NewRequest(method, tourismPath, bytes.NewBuffer(body))
 
 	if err != nil {
 		return Response{}, err
 	}
 
-	request.Header.Set("Content-Type", "application/json; charset=utf-8")
+	request.Header.Set("Content-Type", "application/json")
 
 	var client *http.Client = http.DefaultClient
 	response, err := client.Do(request)
@@ -33,7 +36,6 @@ func getRequest(tourismPath string) (Response, error) {
 	if err != nil {
 		return Response{}, err
 	}
-
 
 	responseBody, err := io.ReadAll(response.Body)
 

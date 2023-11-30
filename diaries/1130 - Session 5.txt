@@ -1,0 +1,20 @@
+-----------------------------------------
+Date: 2023-11-30
+Participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Added POST request to Tourism Service
+- Added Mock to test
+
+
+Results:
+
+- Slow but steady progress :)
+
+
+Difficulties Found:
+
+- We could not identify the error with the mock test for quite long. 
+Finally, we figured out that the behaviour of the library was not what we expected
