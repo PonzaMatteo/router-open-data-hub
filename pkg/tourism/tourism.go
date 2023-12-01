@@ -1,10 +1,10 @@
-package main
+package tourism
 
 import (
 	"bytes"
-	"fmt"
 	"io"
 	"net/http"
+	"opendatahubchallenge/pkg/service"
 )
 
 type TourismService struct{}
@@ -12,20 +12,19 @@ type Message struct {
 	Body string
 }
 
-func (TourismService) ExecuteRequest(method string, path string, body []byte) Response {
+func (TourismService) ExecuteRequest(method string, path string, body []byte) service.Response {
 	tourismPath := "https://tourism.opendatahub.com" + path
 
-	response, err := request(tourismPath, method, body)
-	fmt.Println("Error", err)
+	response, _ := request(tourismPath, method, body)
 	return response
 }
 
-func request(tourismPath string, method string, body []byte) (Response, error) {
+func request(tourismPath string, method string, body []byte) (service.Response, error) {
 
 	request, err := http.NewRequest(method, tourismPath, bytes.NewBuffer(body))
 
 	if err != nil {
-		return Response{}, err
+		return service.Response{}, err
 	}
 
 	request.Header.Set("Content-Type", "application/json")
@@ -34,16 +33,16 @@ func request(tourismPath string, method string, body []byte) (Response, error) {
 	response, err := client.Do(request)
 
 	if err != nil {
-		return Response{}, err
+		return service.Response{}, err
 	}
 
 	responseBody, err := io.ReadAll(response.Body)
 
 	if err != nil {
-		return Response{}, err
+		return service.Response{}, err
 	}
 
-	var result = Response{body: string(responseBody), statusCode: response.StatusCode}
+	var result = service.Response{Body: string(responseBody), StatusCode: response.StatusCode}
 
 	// clean up memory after execution
 	defer response.Body.Close()

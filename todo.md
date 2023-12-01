@@ -11,6 +11,6 @@
 ## QUESTION LIST
 
 - [ ] *The component should map the response from both classes to a common format that will be used in the response. This mapping should be done by configuration and cannot depend directly on the entities involved.*
-- [ ]  *All the parameters and information needed should be read from a configuration file*. What are the parameters?
+- [ ]  *All the parameters and information needed should be read from a configuration file*. What are the parameters? - get all the stations first then check if the incoming call has the same parameters as the "id"
 - [ ]  Should the component be a HTTP server or just a class that takes in an input 
 - [ ]  Are we allowed to modify the path

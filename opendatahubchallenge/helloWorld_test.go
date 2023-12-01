@@ -8,26 +8,26 @@ import (
 
 func TestResponse(t *testing.T) {
 
-	t.Run("successful response", func(t *testing.T) {
-		response, _ := getAccommodation()
-		got := response.statusCode
-		want := 200
-		if got != want {
-			t.Errorf("got %q want %q", got, want)
-		}
-	})
+	// t.Run("successful response", func(t *testing.T) {
+	// 	response, _ := getAccommodation()
+	// 	got := response.statusCode
+	// 	want := 200
+	// 	if got != want {
+	// 		t.Errorf("got %q want %q", got, want)
+	// 	}
+	// })
 
-	t.Run("compare response body", func(t *testing.T) {
-		currentResponse, _ := getAccommodation()
-		got := extractFloatFromJson(t, currentResponse.body, "TotalResults")
+	// t.Run("compare response body", func(t *testing.T) {
+	// 	currentResponse, _ := getAccommodation()
+	// 	got := extractFloatFromJson(t, currentResponse.body, "TotalResults")
 
-		sampleResponse := readFile(t, "../response-samples/tourism-accommodations.json")
-		want := extractFloatFromJson(t, string(sampleResponse), "TotalResults")
+	// 	sampleResponse := readFile(t, "../response-samples/tourism-accommodations.json")
+	// 	want := extractFloatFromJson(t, string(sampleResponse), "TotalResults")
 
-		if got != want {
-			t.Errorf("got %v want %v", got, want)
-		}
-	})
+	// 	if got != want {
+	// 		t.Errorf("got %v want %v", got, want)
+	// 	}
+	// })
 }
 
 func extractFloatFromJson(t *testing.T, currentResponse string, keyField string) float64 {

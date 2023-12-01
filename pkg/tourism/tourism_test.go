@@ -1,4 +1,4 @@
-package main
+package tourism
 
 import (
 	"encoding/json"
@@ -16,10 +16,10 @@ func TestTourismService(t *testing.T) {
 	t.Run("Tourism service should connect to an existing API", func(t *testing.T) {
 		var service = TourismService{}
 
-		var response Response = service.ExecuteRequest(http.MethodGet, "/v1/Accommodation", nil)
+		response := service.ExecuteRequest(http.MethodGet, "/v1/Accommodation", nil)
 
 		expected := 200
-		actual := response.statusCode
+		actual := response.StatusCode
 		assert.Equal(t, expected, actual, "Wrong Status Code")
 
 	})
@@ -27,10 +27,10 @@ func TestTourismService(t *testing.T) {
 	t.Run("Tourism service should fail with wrong path", func(t *testing.T) {
 		var service = TourismService{}
 
-		var response Response = service.ExecuteRequest(http.MethodGet, "/v1/path-not-exist", nil)
+		response := service.ExecuteRequest(http.MethodGet, "/v1/path-not-exist", nil)
 
 		expected := 404
-		actual := response.statusCode
+		actual := response.StatusCode
 		assert.Equal(t, expected, actual, "Wrong Status Code")
 
 	})
@@ -40,10 +40,10 @@ func TestTourismService(t *testing.T) {
 
 		body, err := json.Marshal("string")
 		assert.NoError(t, err)
-		var response Response = service.ExecuteRequest(http.MethodPost, "/v1/AccommodationAvailable", body)
+		response := service.ExecuteRequest(http.MethodPost, "/v1/AccommodationAvailable", body)
 
 		expected := 401
-		actual := response.statusCode
+		actual := response.StatusCode
 		assert.Equal(t, expected, actual, "Wrong Status Code")
 
 	})
@@ -59,13 +59,13 @@ func TestTourismServiceUsingMock(t *testing.T) {
 			JSON(map[string]string{"value": "fixed"})
 
 		var service = TourismService{}
-		var response Response = service.ExecuteRequest(http.MethodGet, "/v1/Accommodation", nil)
+		response := service.ExecuteRequest(http.MethodGet, "/v1/Accommodation", nil)
 
 		expected := 200
-		actual := response.statusCode
+		actual := response.StatusCode
 		assert.Equal(t, expected, actual, "Wrong Status Code")
 
-		assert.Equal(t, "{\"value\":\"fixed\"}\n", response.body, "Wrong Status Code")
+		assert.Equal(t, "{\"value\":\"fixed\"}\n", response.Body, "Wrong Status Code")
 	})
 
 	t.Run("Tourism POST service to API without authorization using mock", func(t *testing.T) {
@@ -82,12 +82,12 @@ func TestTourismServiceUsingMock(t *testing.T) {
 		body, err := json.Marshal(map[string]string{"message": "hello"})
 		assert.NoError(t, err)
 		var service = TourismService{}
-		var response Response = service.ExecuteRequest(http.MethodPost, "/v1/AccommodationAvailable", body)
+		response := service.ExecuteRequest(http.MethodPost, "/v1/AccommodationAvailable", body)
 
 		expected := 401
-		actual := response.statusCode
+		actual := response.StatusCode
 		assert.Equal(t, expected, actual, "Wrong Status Code")
 
-		assert.Equal(t, "{\"value\":\"fixed\"}\n", response.body, "Wrong Status Code")
+		assert.Equal(t, "{\"value\":\"fixed\"}\n", response.Body, "Wrong Status Code")
 	})
 }
