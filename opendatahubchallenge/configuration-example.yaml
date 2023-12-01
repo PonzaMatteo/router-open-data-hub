@@ -1,0 +1,5 @@
+routes: 
+  - path: /v1/Accommodation*
+    service: tourism
+  - path: /v2/flat,node/Trafficstation
+    service: mobility
