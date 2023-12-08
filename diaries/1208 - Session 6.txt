@@ -1,0 +1,21 @@
+-----------------------------------------
+Date: 2023-12-08
+Participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Consulted with professor on Challenge requirements on 7 Dec 2023
+
+
+Results:
+
+Some clarifications that we got from the discussion:-
+- Understood that the bulk of the program should be on mapping the request and response to a predefined structure.
+- Input by the user can be defined by our program, independent of what open data hub APIs expect
+- HTTP server is not needed
+
+
+Difficulties Found:
+
+- Initially, we misunderstood the challenge requirements. Now, we have a clearer picture of what to do.
