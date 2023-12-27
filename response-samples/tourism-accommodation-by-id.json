@@ -1,0 +1,220 @@
+{
+  "Id": "2657B7CBCB85380B253D2FBE28AF100E_REDUCED",
+  "Self": "https://tourism.opendatahub.com/v1/Accommodation/2657B7CBCB85380B253D2FBE28AF100E_REDUCED",
+  "HgvId": null,
+  "_Meta": {
+    "Id": "2657B7CBCB85380B253D2FBE28AF100E_REDUCED",
+    "Type": "accommodation",
+    "Source": "lts",
+    "Reduced": true,
+    "LastUpdate": "2023-12-27T01:32:00.3950106+00:00",
+    "UpdateInfo": {
+      "UpdatedBy": "lts.push.import",
+      "UpdateSource": "odh.importer"
+    }
+  },
+  "Active": true,
+  "Source": "lts",
+  "GpsInfo": [
+    {
+      "Gpstype": "position",
+      "Altitude": 322,
+      "Latitude": 46.615101,
+      "Longitude": 11.143296,
+      "AltitudeUnitofMeasure": "m"
+    }
+  ],
+  "Gpstype": "position",
+  "HasRoom": true,
+  "Mapping": {},
+  "ODHTags": [],
+  "SmgTags": null,
+  "AccoType": {
+    "Id": "BedBreakfast",
+    "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/BedBreakfast"
+  },
+  "Altitude": 322,
+  "BadgeIds": null,
+  "BoardIds": null,
+  "Features": null,
+  "Latitude": 46.615101,
+  "ThemeIds": null,
+  "GpsPoints": {
+    "position": {
+      "Gpstype": "position",
+      "Altitude": 322,
+      "Latitude": 46.615101,
+      "Longitude": 11.143296,
+      "AltitudeUnitofMeasure": "m"
+    }
+  },
+  "IsCamping": null,
+  "Longitude": 11.143296,
+  "OdhActive": true,
+  "Shortname": "1477 Reichhalter",
+  "SmgActive": true,
+  "AccoBadges": [],
+  "AccoBoards": [],
+  "AccoDetail": {
+    "de": {
+      "Fax": null,
+      "Vat": null,
+      "Zip": "39011",
+      "City": "Lana",
+      "Name": "1477 Reichhalter",
+      "Email": null,
+      "Phone": "+39 0473 051050",
+      "Mobile": null,
+      "Street": "Metzgergasse 2",
+      "Website": "http://www.1477reichhalter.com",
+      "Language": "de",
+      "Lastname": null,
+      "Longdesc": null,
+      "Firstname": null,
+      "Shortdesc": null,
+      "CountryCode": "IT",
+      "NameAddition": null
+    },
+    "en": {
+      "Fax": null,
+      "Vat": null,
+      "Zip": "39011",
+      "City": "Lana",
+      "Name": "1477 Reichhalter",
+      "Email": null,
+      "Phone": "+39 0473 051050",
+      "Mobile": null,
+      "Street": "Metzgergasse 2",
+      "Website": "http://www.1477reichhalter.com",
+      "Language": "en",
+      "Lastname": null,
+      "Longdesc": null,
+      "Firstname": null,
+      "Shortdesc": null,
+      "CountryCode": "IT",
+      "NameAddition": null
+    },
+    "it": {
+      "Fax": null,
+      "Vat": null,
+      "Zip": "39011",
+      "City": "Lana",
+      "Name": "1477 Reichhalter",
+      "Email": null,
+      "Phone": "+39 0473 051050",
+      "Mobile": null,
+      "Street": "Via Macello 2",
+      "Website": "http://www.1477reichhalter.com",
+      "Language": "it",
+      "Lastname": null,
+      "Longdesc": null,
+      "Firstname": null,
+      "Shortdesc": null,
+      "CountryCode": "IT",
+      "NameAddition": null
+    }
+  },
+  "AccoThemes": [],
+  "AccoTypeId": "BedBreakfast",
+  "DistrictId": null,
+  "IsBookable": false,
+  "LastChange": "2023-12-27T01:32:00.3950106+00:00",
+  "AccoHGVInfo": null,
+  "FirstImport": "2018-03-24T01:35:05.7368394",
+  "HasLanguage": [
+    "de",
+    "it",
+    "en"
+  ],
+  "LicenseInfo": {
+    "Author": "",
+    "License": "CC0",
+    "ClosedData": false,
+    "LicenseHolder": "https://www.lts.it"
+  },
+  "PublishedOn": [
+    "suedtirol.info",
+    "idm-marketplace"
+  ],
+  "AccoCategory": {
+    "Id": "3suns",
+    "Self": "https://tourism.opendatahub.com/v1/AccommodationTypes/3suns"
+  },
+  "AccoOverview": null,
+  "AccoRoomInfo": null,
+  "DistanceInfo": null,
+  "GastronomyId": null,
+  "HasApartment": false,
+  "ImageGallery": null,
+  "IsGastronomy": null,
+  "LocationInfo": {
+    "TvInfo": {
+      "Id": "522822B451CA11D18F1400A02427D15E",
+      "Name": {
+        "cs": "Lana a okolí",
+        "de": "Lana und Umgebung",
+        "en": "Lana and environs",
+        "fr": "Lana et environs",
+        "it": "Lana e dintorni",
+        "nl": "Lana en omgeving",
+        "pl": "Lana i okolice",
+        "ru": "Лана и окрестности"
+      },
+      "Self": "https://tourism.opendatahub.com/v1/TourismAssociation/522822B451CA11D18F1400A02427D15E"
+    },
+    "AreaInfo": null,
+    "RegionInfo": {
+      "Id": "D2633A20C24E11D18F1B006097B8970B",
+      "Name": {
+        "cs": "Meran/Merano a okolí",
+        "de": "Meran und Umgebung",
+        "en": "Meran/Merano and environs",
+        "fr": "Meran/Merano et environs",
+        "it": "Merano e dintorni",
+        "nl": "Meran/Merano en omgeving",
+        "pl": "Meran/Merano i okolice",
+        "ru": "Меран/Merano и окрестности"
+      },
+      "Self": "https://tourism.opendatahub.com/v1/Region/D2633A20C24E11D18F1B006097B8970B"
+    },
+    "DistrictInfo": {
+      "Id": "79CBD79551C911D18F1400A02427D15E",
+      "Name": {
+        "cs": "Lana/Lana",
+        "de": "Lana",
+        "en": "Lana/Lana",
+        "fr": "Lana/Lana",
+        "it": "Lana",
+        "nl": "Lana/Lana",
+        "pl": "Lana/Lana",
+        "ru": "Лана"
+      },
+      "Self": "https://tourism.opendatahub.com/v1/District/79CBD79551C911D18F1400A02427D15E"
+    },
+    "MunicipalityInfo": {
+      "Id": "0EECEC93283E42488CBE0EB3B94CD339",
+      "Name": {
+        "cs": "Lana",
+        "de": "Lana",
+        "en": "Lana",
+        "fr": "Lana",
+        "it": "Lana",
+        "nl": "Lana",
+        "pl": "Lana",
+        "ru": "Лана"
+      },
+      "Self": "https://tourism.opendatahub.com/v1/Municipality/0EECEC93283E42488CBE0EB3B94CD339"
+    }
+  },
+  "MainLanguage": null,
+  "AccoCategoryId": "3suns",
+  "IndependentData": null,
+  "IsAccommodation": null,
+  "TourismVereinId": null,
+  "MssResponseShort": [],
+  "MarketingGroupIds": null,
+  "AccoBookingChannel": null,
+  "SpecialFeaturesIds": null,
+  "AccoSpecialFeatures": [],
+  "AltitudeUnitofMeasure": "m"
+}

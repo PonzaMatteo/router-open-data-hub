@@ -2,6 +2,7 @@ package tourism
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"net/http"
 	"opendatahubchallenge/pkg/service"
@@ -15,7 +16,11 @@ type Message struct {
 func (TourismService) ExecuteRequest(method string, path string, body []byte) service.Response {
 	tourismPath := "https://tourism.opendatahub.com" + path
 
-	response, _ := request(tourismPath, method, body)
+	response, err := request(tourismPath, method, body)
+	if err != nil {
+		fmt.Print(tourismPath)
+		panic(err) // todo;
+	}
 	return response
 }
 
