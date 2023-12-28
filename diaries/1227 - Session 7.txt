@@ -1,0 +1,20 @@
+-----------------------------------------
+Date: 2023-12-27
+Participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Added Service data class that Tourism service and Mobility service inherits
+- Added Mobility Service with tests
+- Added router that calls both Mobility and Tourism services
+
+
+Results:
+
+- Working tourism and mobility service
+
+
+Difficulties Found:
+
+- Nil

@@ -1,0 +1,19 @@
+-----------------------------------------
+Date: 2023-12-28
+Participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Added configuration file
+- Added input mapping
+
+
+Results:
+
+- Router type that encapsulates configuration and forward requests to tourism and mobility service
+
+
+Difficulties Found:
+
+- Had troubles with url encodings

@@ -2,6 +2,7 @@ package mobility
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"net/http"
 	"opendatahubchallenge/pkg/service"
@@ -13,9 +14,13 @@ type Message struct {
 }
 
 func (MobilityService) ExecuteRequest(method string, path string, body []byte) service.Response {
-	mobilityPath := "https://mobility.opendatahub.com" + path
+	mobilityPath := "https://mobility.api.opendatahub.com" + path
 
-	response, _ := request(mobilityPath, method, body)
+	response, err := request(mobilityPath, method, body)
+	if err != nil {
+		fmt.Print(mobilityPath)
+		panic(err) // todo;
+	}
 	return response
 }
 

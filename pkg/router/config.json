@@ -1,0 +1,40 @@
+{
+    "routes": [
+        {
+            "keyword": "Accommodation",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Availability",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Event",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Venue",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Weather",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Webcam",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Article",
+            "service": "tourism"
+        },
+        {
+            "keyword": "ODHActivity",
+            "service": "tourism"
+        },
+        {
+            "keyword": "v2",
+            "service": "mobility"
+        }
+    ]
+}
