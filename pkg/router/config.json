@@ -33,6 +33,58 @@
             "service": "tourism"
         },
         {
+            "keyword": "MetaRegion",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Experience",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Region",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Tourism",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Municipality",
+            "service": "tourism"
+        },
+        {
+            "keyword": "District",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Area",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Ski",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Wine",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Distinct",
+            "service": "tourism"
+        },
+        {
+            "keyword": "GeoConverter",
+            "service": "tourism"
+        },
+        {
+            "keyword": "JsonLD",
+            "service": "tourism"
+        },
+        {
+            "keyword": "Location",
+            "service": "tourism"
+        },
+        {
             "keyword": "v2",
             "service": "mobility"
         }
