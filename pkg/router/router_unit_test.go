@@ -11,8 +11,8 @@ func TestRouterWithMock(t *testing.T) {
 	// we create a router that have the following config
 	// routes:
 	//   - keyword: "test_keyword"
-	//     service: "test_service
-	// test_service is a mock
+	//     service: "test_service"
+	// testService is a mock
 	t.Run("Router should connect to mock service", func(t *testing.T) {
 
 		ts := testService{
@@ -27,7 +27,7 @@ func TestRouterWithMock(t *testing.T) {
 		var router = NewRouter("mockfile.json")
 		router.AddService("test_service", ts)
 
-		_ = router.EntryPoint(path, method)
+		_, _ = router.EntryPoint(path, method)
 
 	})
 
@@ -51,8 +51,9 @@ func TestRouterWithMock(t *testing.T) {
 		router.AddService("test_service_1", ts1)
 		router.AddService("test_service", ts)
 
-		response := router.EntryPoint(path, method)
+		response, err := router.EntryPoint(path, method)
 		assert.Equal(t, "response from test service", response.Body)
+		assert.NoError(t, err)
 
 	})
 }

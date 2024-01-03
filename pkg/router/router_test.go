@@ -20,10 +20,11 @@ func TestRouter(t *testing.T) {
 		path := "/v1/Accommodation/2657B7CBCB85380B253D2FBE28AF100E_REDUCED"
 		method := "GET"
 		var router = NewDefaultRouter()
-		response := router.EntryPoint(path, method)
+		response, err := router.EntryPoint(path, method)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 		assert.Contains(t, response.Body, `{"Id": "2657B7CBCB85380B253D2FBE28AF100E_REDUCED"}`)
+		assert.NoError(t, err)
 
 		// Verify that we don't have pending mocks
 		assert.True(t, gock.IsDone())
@@ -42,10 +43,11 @@ func TestRouter(t *testing.T) {
 		path := "/v2/tree,node"
 		method := "GET"
 		var router = NewDefaultRouter()
-		response := router.EntryPoint(path, method)
+		response, err := router.EntryPoint(path, method)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 		assert.Contains(t, response.Body, `{"id": "Bicycle"}`)
+		assert.NoError(t, err)
 		assert.True(t, gock.IsDone())
 	})
 
@@ -62,10 +64,11 @@ func TestRouter(t *testing.T) {
 		path := "/v1/Tag/region"
 		method := "GET"
 		var router = NewDefaultRouter()
-		response := router.EntryPoint(path, method)
+		response, err := router.EntryPoint(path, method)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 		assert.Contains(t, response.Body, `{"Id": "region"}`)
+		assert.NoError(t, err)
 		assert.True(t, gock.IsDone())
 	})
 
@@ -85,9 +88,10 @@ func TestRouter(t *testing.T) {
 		path := "/v1/Does-Not-Exist"
 		method := "GET"
 		var router = NewDefaultRouter()
-		response := router.EntryPoint(path, method)
+		response, err := router.EntryPoint(path, method)
 
 		assert.Equal(t, 404, response.StatusCode, "Wrong Status Code")
+		assert.NoError(t, err)
 		assert.True(t, gock.IsDone())
 	})
 
@@ -100,20 +104,13 @@ func TestRouter(t *testing.T) {
 			Get("/v2/Does-Not-Exist").
 			Reply(404)
 
-		gock.New("https://tourism.opendatahub.com").
-			Get("/v2/Does-Not-Exist").
-			Reply(404)
-
-		gock.New("https://mobility.api.opendatahub.com").
-			Get("/v2/Does-Not-Exist").
-			Reply(404)
-
 		path := "/v2/Does-Not-Exist"
 		method := "GET"
 		var router = NewDefaultRouter()
-		response := router.EntryPoint(path, method)
+		response, err := router.EntryPoint(path, method)
 
 		assert.Equal(t, 404, response.StatusCode, "Wrong Status Code")
+		assert.NoError(t, err)
 		assert.True(t, gock.IsDone())
 	})
 }

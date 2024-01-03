@@ -21,7 +21,7 @@ type Config struct {
 }
 
 type Router struct {
-	config *Config
+	config       *Config
 	serviceTypes map[string]service.Service
 }
 
@@ -38,7 +38,7 @@ func NewRouter(fileName string) Router {
 		panic(err)
 	}
 	var router = Router{
-		config: config,
+		config:       config,
 		serviceTypes: make(map[string]service.Service),
 	}
 	return router
@@ -48,44 +48,40 @@ func (r *Router) AddService(serviceID string, serviceType service.Service) {
 	r.serviceTypes[serviceID] = serviceType
 }
 
-//Add error in return
-func (r *Router) EntryPoint(path string, method string) service.Response {
-	var response service.Response
-	configurations := r.config
-	var s service.Service
-
-	for _, route := range configurations.Routes {
+func (r *Router) EntryPoint(path string, method string) (*service.Response, error) {
+	for _, route := range r.config.Routes {
 		if strings.Contains(path, route.Keyword) {
-			s = r.serviceTypes[route.Service]
+			s := r.serviceTypes[route.Service]
 			var err error // declare error first to avoid shadowing
-			response, err = s.ExecuteRequest(method, path, nil)
+			response, err := s.ExecuteRequest(method, path, nil)
 			if err != nil {
-				panic(err)
+				return nil, err
 			}
-			break
+			return &response, nil
 		}
 	}
 
-	if response.StatusCode != 200 {
-		response = r.AttemptRequest(response, method, path)
+	response, err := r.AttemptRequest(method, path)
+	if err != nil {
+		return nil, err
 	}
 
-	return response
+	return response, nil
 }
 
-func (r *Router) AttemptRequest(response service.Response, method string, path string) service.Response {
+func (r *Router) AttemptRequest(method string, path string) (*service.Response, error) {
+	var response service.Response
 	for _, serviceType := range r.serviceTypes {
 		var err error
 		response, err = serviceType.ExecuteRequest(method, path, nil)
+		if err != nil {
+			return nil, err
+		}
 		if response.StatusCode == 200 {
 			break
 		}
-
-		if err != nil {
-			panic(err)
-		}
 	}
-	return response
+	return &response, nil
 }
 
 func readConfigFromFile(fileName string) (*Config, error) {
