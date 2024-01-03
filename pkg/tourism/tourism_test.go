@@ -16,7 +16,8 @@ func TestTourismService(t *testing.T) {
 	t.Run("Tourism service should connect to an existing API", func(t *testing.T) {
 		var service = TourismService{}
 
-		response := service.ExecuteRequest(http.MethodGet, "/v1/Accommodation", nil)
+		response, err := service.ExecuteRequest(http.MethodGet, "/v1/Accommodation", nil)
+		assert.NoError(t, err)
 
 		expected := 200
 		actual := response.StatusCode
@@ -27,7 +28,8 @@ func TestTourismService(t *testing.T) {
 	t.Run("Tourism service should fail with wrong path", func(t *testing.T) {
 		var service = TourismService{}
 
-		response := service.ExecuteRequest(http.MethodGet, "/v1/path-not-exist", nil)
+		response, err := service.ExecuteRequest(http.MethodGet, "/v1/path-not-exist", nil)
+		assert.NoError(t, err)
 
 		expected := 404
 		actual := response.StatusCode
@@ -40,7 +42,8 @@ func TestTourismService(t *testing.T) {
 
 		body, err := json.Marshal("string")
 		assert.NoError(t, err)
-		response := service.ExecuteRequest(http.MethodPost, "/v1/AccommodationAvailable", body)
+		response, err := service.ExecuteRequest(http.MethodPost, "/v1/AccommodationAvailable", body)
+		assert.NoError(t, err)
 
 		expected := 401
 		actual := response.StatusCode
@@ -59,7 +62,8 @@ func TestTourismServiceUsingMock(t *testing.T) {
 			JSON(map[string]string{"value": "fixed"})
 
 		var service = TourismService{}
-		response := service.ExecuteRequest(http.MethodGet, "/v1/Accommodation", nil)
+		response, err := service.ExecuteRequest(http.MethodGet, "/v1/Accommodation", nil)
+		assert.NoError(t, err)
 
 		expected := 200
 		actual := response.StatusCode
@@ -82,7 +86,8 @@ func TestTourismServiceUsingMock(t *testing.T) {
 		body, err := json.Marshal(map[string]string{"message": "hello"})
 		assert.NoError(t, err)
 		var service = TourismService{}
-		response := service.ExecuteRequest(http.MethodPost, "/v1/AccommodationAvailable", body)
+		response, err := service.ExecuteRequest(http.MethodPost, "/v1/AccommodationAvailable", body)
+		assert.NoError(t, err)
 
 		expected := 401
 		actual := response.StatusCode

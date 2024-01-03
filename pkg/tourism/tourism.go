@@ -13,7 +13,7 @@ type Message struct {
 	Body string
 }
 
-func (TourismService) ExecuteRequest(method string, path string, body []byte) service.Response {
+func (TourismService) ExecuteRequest(method string, path string, body []byte) (service.Response, error) {
 	tourismPath := "https://tourism.opendatahub.com" + path
 
 	response, err := request(tourismPath, method, body)
@@ -21,7 +21,7 @@ func (TourismService) ExecuteRequest(method string, path string, body []byte) se
 		fmt.Print(tourismPath)
 		panic(err) // todo;
 	}
-	return response
+	return response, nil
 }
 
 func request(tourismPath string, method string, body []byte) (service.Response, error) {

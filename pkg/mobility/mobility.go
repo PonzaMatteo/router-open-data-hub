@@ -13,7 +13,7 @@ type Message struct {
 	Body string
 }
 
-func (MobilityService) ExecuteRequest(method string, path string, body []byte) service.Response {
+func (MobilityService) ExecuteRequest(method string, path string, body []byte) (service.Response, error) {
 	mobilityPath := "https://mobility.api.opendatahub.com" + path
 
 	response, err := request(mobilityPath, method, body)
@@ -21,7 +21,7 @@ func (MobilityService) ExecuteRequest(method string, path string, body []byte) s
 		fmt.Print(mobilityPath)
 		panic(err) // todo;
 	}
-	return response
+	return response, nil
 }
 
 func request(mobilityPath string, method string, body []byte) (service.Response, error) {

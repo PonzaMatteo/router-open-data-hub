@@ -57,7 +57,12 @@ func (r Router) EntryPoint(path string, method string) service.Response {
 			default:
 				continue
 			}
-			response = s.ExecuteRequest(method, path, nil)
+
+			var err error
+			response, err = s.ExecuteRequest(method, path, nil)
+			if err != nil {
+				panic(err)
+			}
 			break
 		}
 	}
@@ -72,9 +77,14 @@ func (r Router) EntryPoint(path string, method string) service.Response {
 func AttemptRequest(response service.Response, method string, path string) service.Response {
 	var serviceTypes = []service.Service{tourism.TourismService{}, mobility.MobilityService{}}
 	for _, serviceType := range serviceTypes {
-		response = serviceType.ExecuteRequest(method, path, nil)
+		var err error
+		response, err = serviceType.ExecuteRequest(method, path, nil)
 		if response.StatusCode == 200 {
 			break
+		}
+
+		if err != nil {
+			panic(err)
 		}
 	}
 	return response
@@ -90,8 +100,8 @@ func readConfigFromFile(fileName string) (*Config, error) {
 	extension := strings.ToLower(path.Ext(fileName))
 	if extension != ".json" {
 		return nil, fmt.Errorf("unsupported configuration file extension (`%s`): %s", extension, fileName)
-	} 
-	
+	}
+
 	err = json.Unmarshal([]byte(data), &configData)
 	if err != nil {
 		return nil, err

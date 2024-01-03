@@ -15,7 +15,8 @@ func TestMobilityService(t *testing.T) {
 	t.Run("Mobility service should connect to an existing API", func(t *testing.T) {
 		var service = MobilityService{}
 
-		response := service.ExecuteRequest(http.MethodGet, "/v2/tree,node", nil)
+		response, err := service.ExecuteRequest(http.MethodGet, "/v2/tree,node", nil)
+		assert.NoError(t, err)
 
 		expected := 200
 		actual := response.StatusCode
@@ -26,7 +27,8 @@ func TestMobilityService(t *testing.T) {
 	t.Run("Mobility service should fail with wrong path", func(t *testing.T) {
 		var service = MobilityService{}
 
-		response := service.ExecuteRequest(http.MethodGet, "/v/path-not-exist", nil)
+		response, err := service.ExecuteRequest(http.MethodGet, "/v/path-not-exist", nil)
+		assert.NoError(t, err)
 
 		expected := 404
 		actual := response.StatusCode
@@ -46,7 +48,8 @@ func TestMobilityServiceUsingMock(t *testing.T) {
 			JSON(map[string]string{"value": "fixed"})
 
 		var service = MobilityService{}
-		response := service.ExecuteRequest(http.MethodGet, "/v2/tree,node", nil)
+		response, err := service.ExecuteRequest(http.MethodGet, "/v2/tree,node", nil)
+		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 
