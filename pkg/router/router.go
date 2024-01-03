@@ -2,10 +2,12 @@ package router
 
 import (
 	"encoding/json"
+	"fmt"
 	"opendatahubchallenge/pkg/mobility"
 	"opendatahubchallenge/pkg/service"
 	"opendatahubchallenge/pkg/tourism"
 	"os"
+	"path"
 	"strings"
 )
 
@@ -42,10 +44,13 @@ func (r Router) EntryPoint(path string, method string) service.Response {
 	var response service.Response
 	configurations := r.config
 	var s service.Service
+
+	// TODO: would a map[string] service.Service help us here?
 	for _, route := range configurations.Routes {
 		if strings.Contains(path, route.Keyword) {
 			switch route.Service {
 			case "tourism":
+				// TODO: inject the services rather than "creating them" here
 				s = tourism.TourismService{}
 			case "mobility":
 				s = mobility.MobilityService{}
@@ -56,9 +61,11 @@ func (r Router) EntryPoint(path string, method string) service.Response {
 			break
 		}
 	}
+
 	if response.StatusCode != 200 {
 		response = AttemptRequest(response, method, path)
 	}
+
 	return response
 }
 
@@ -79,6 +86,12 @@ func readConfigFromFile(fileName string) (*Config, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	extension := strings.ToLower(path.Ext(fileName))
+	if(extension != "json") {
+		return nil, fmt.Errorf("unsupported configuration file format: %s", fileName)
+	} 
+	
 	err = json.Unmarshal([]byte(data), &configData)
 	if err != nil {
 		return nil, err
