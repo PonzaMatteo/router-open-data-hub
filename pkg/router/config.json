@@ -85,6 +85,10 @@
             "service": "tourism"
         },
         {
+            "keyword": "flat,event",
+            "service": "mobility"
+        },
+        {
             "keyword": "v2",
             "service": "mobility"
         }
