@@ -52,7 +52,7 @@ func TestRouterWithMock(t *testing.T) {
 		router.AddService("test_service", ts)
 
 		response := router.EntryPoint(path, method)
-		assert.EqualValues(t, "response from test service", response.Body)
+		assert.Equal(t, "response from test service", response.Body)
 
 	})
 }

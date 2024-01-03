@@ -48,6 +48,7 @@ func (r *Router) AddService(serviceID string, serviceType service.Service) {
 	r.serviceTypes[serviceID] = serviceType
 }
 
+//Add error in return
 func (r *Router) EntryPoint(path string, method string) service.Response {
 	var response service.Response
 	configurations := r.config
