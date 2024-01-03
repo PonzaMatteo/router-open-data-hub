@@ -8,9 +8,22 @@
 - [ ] Build generic component RouterService 
 
 
-## QUESTION LIST
 
-- [ ] *The component should map the response from both classes to a common format that will be used in the response. This mapping should be done by configuration and cannot depend directly on the entities involved.*
-- [ ]  *All the parameters and information needed should be read from a configuration file*. What are the parameters? - get all the stations first then check if the incoming call has the same parameters as the "id"
-- [ ]  Should the component be a HTTP server or just a class that takes in an input 
-- [ ]  Are we allowed to modify the path
+mobility-events
+- "evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+- "evstart": "2022-05-10 00:00:00.000+0000"
+- "evend": "2022-05-11 00:00:00.000+0000",
+
+
+tourism-events
+- "Id": "BFEB2DDB0FD54AC9BC040053A5514A92_REDUCED"
+- "DateBegin": "2022-06-01T00:00:00"
+- "DateEnd": "2022-06-01T00:00:00"
+
+event: 
+    - id: evuuid / Id
+    - start_date: evstart / DateBegin
+    - end_date: evend / DateEnd
+
+
+Todo: make API string comparison lowercase
