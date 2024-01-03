@@ -22,11 +22,14 @@ type Config struct {
 
 type Router struct {
 	config *Config
-	// "tourism"
+	serviceTypes map[string]service.Service
 }
 
 func NewDefaultRouter() Router {
-	return NewRouter("config.json")
+	router := NewRouter("config.json")
+	router.AddService("tourism", tourism.TourismService{})
+	router.AddService("mobility", mobility.MobilityService{})
+	return router
 }
 
 func NewRouter(fileName string) Router {
@@ -36,29 +39,24 @@ func NewRouter(fileName string) Router {
 	}
 	var router = Router{
 		config: config,
+		serviceTypes: make(map[string]service.Service),
 	}
 	return router
 }
 
-func (r Router) EntryPoint(path string, method string) service.Response {
+func (r *Router) AddService(serviceID string, serviceType service.Service) {
+	r.serviceTypes[serviceID] = serviceType
+}
+
+func (r *Router) EntryPoint(path string, method string) service.Response {
 	var response service.Response
 	configurations := r.config
 	var s service.Service
 
-	// TODO: would a map[string] service.Service help us here?
 	for _, route := range configurations.Routes {
 		if strings.Contains(path, route.Keyword) {
-			switch route.Service {
-			case "tourism":
-				// TODO: inject the services rather than "creating them" here
-				s = tourism.TourismService{}
-			case "mobility":
-				s = mobility.MobilityService{}
-			default:
-				continue
-			}
-
-			var err error
+			s = r.serviceTypes[route.Service]
+			var err error // declare error first to avoid shadowing
 			response, err = s.ExecuteRequest(method, path, nil)
 			if err != nil {
 				panic(err)
@@ -68,15 +66,14 @@ func (r Router) EntryPoint(path string, method string) service.Response {
 	}
 
 	if response.StatusCode != 200 {
-		response = AttemptRequest(response, method, path)
+		response = r.AttemptRequest(response, method, path)
 	}
 
 	return response
 }
 
-func AttemptRequest(response service.Response, method string, path string) service.Response {
-	var serviceTypes = []service.Service{tourism.TourismService{}, mobility.MobilityService{}}
-	for _, serviceType := range serviceTypes {
+func (r *Router) AttemptRequest(response service.Response, method string, path string) service.Response {
+	for _, serviceType := range r.serviceTypes {
 		var err error
 		response, err = serviceType.ExecuteRequest(method, path, nil)
 		if response.StatusCode == 200 {

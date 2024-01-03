@@ -1,0 +1,8 @@
+{
+    "routes": [
+        {
+            "keyword": "test_keyword",
+            "service": "test_service"
+        }
+    ]
+}
