@@ -18,8 +18,7 @@ func (MobilityService) ExecuteRequest(method string, path string, body []byte) (
 
 	response, err := request(mobilityPath, method, body)
 	if err != nil {
-		fmt.Print(mobilityPath)
-		panic(err) // todo;
+		return service.Response{}, fmt.Errorf("failed to execute request to mobility service: %w", err)
 	}
 	return response, nil
 }

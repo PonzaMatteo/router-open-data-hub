@@ -15,11 +15,9 @@ type Message struct {
 
 func (TourismService) ExecuteRequest(method string, path string, body []byte) (service.Response, error) {
 	tourismPath := "https://tourism.opendatahub.com" + path
-
 	response, err := request(tourismPath, method, body)
 	if err != nil {
-		fmt.Print(tourismPath)
-		panic(err) // todo;
+		return service.Response{}, fmt.Errorf("failed to execute request to tourism service: %w", err)
 	}
 	return response, nil
 }
