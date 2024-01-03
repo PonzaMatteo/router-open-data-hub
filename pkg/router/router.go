@@ -88,8 +88,8 @@ func readConfigFromFile(fileName string) (*Config, error) {
 	}
 
 	extension := strings.ToLower(path.Ext(fileName))
-	if(extension != "json") {
-		return nil, fmt.Errorf("unsupported configuration file format: %s", fileName)
+	if extension != ".json" {
+		return nil, fmt.Errorf("unsupported configuration file extension (`%s`): %s", extension, fileName)
 	} 
 	
 	err = json.Unmarshal([]byte(data), &configData)
