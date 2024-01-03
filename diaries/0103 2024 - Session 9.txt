@@ -1,0 +1,18 @@
+-----------------------------------------
+Date: 2024-01-03
+Participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Explore UML diagrams with Go 
+
+
+Results:
+
+- Created UML diagram based on Go files. Better understanding of UML diagrams
+
+
+Difficulties Found:
+
+- 
