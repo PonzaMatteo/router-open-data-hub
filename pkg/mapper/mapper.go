@@ -34,7 +34,7 @@ func NewMapperFromFile(fileName string, keyword string) (Mapper, error) {
 		return Mapper{}, err
 	}
 	for _, route := range config.Routes {
-		if (route.Keyword == keyword) {
+		if route.Keyword == keyword {
 			var mapper = Mapper{
 				mapping: *route.Mapping,
 			}

@@ -165,7 +165,7 @@ func TestMapper(t *testing.T) {
 		assert.NoError(t, err)
 		assert.JSONEq(t, expected, actual)
 	})
-	
+
 	//to work on
 	t.Run("Read input JSON response from mobility-events file", func(t *testing.T) {
 
