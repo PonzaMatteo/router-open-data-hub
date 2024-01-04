@@ -24,12 +24,16 @@ event:
     - start_date: evstart / DateBegin
     - end_date: evend / DateEnd
 
-
-Todo: make API string comparison lowercase
-
-
 Thought process:
 Mobility
 - focus on events
 - using specific path /v2/flat%2Cevent
 - important details - id, start_date, end_date 
+
+
+
+Todo
+1. make API string comparison lowercase
+2. read json response from services
+3. allow complex json response
+4. extract read file logic into a new package?

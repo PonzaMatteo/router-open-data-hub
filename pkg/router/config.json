@@ -20,7 +20,9 @@
             "keyword": "v2",
             "service": "mobility",
             "mapping": {
-                "evuuid": "id"
+                "evuuid": "id",
+                "evstart": "start_date",
+                "evend": "end_date"
             }
         }
     ]
