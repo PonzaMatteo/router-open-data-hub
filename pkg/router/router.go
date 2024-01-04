@@ -14,6 +14,7 @@ import (
 type Route struct {
 	Keyword string
 	Service string
+	Mapping *map[string]string
 }
 
 type Config struct {
@@ -32,6 +33,7 @@ func NewDefaultRouter() Router {
 	return router
 }
 
+// TODO err
 func NewRouter(fileName string) Router {
 	var config, err = readConfigFromFile(fileName)
 	if err != nil {

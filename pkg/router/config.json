@@ -17,80 +17,11 @@
             "service": "tourism"
         },
         {
-            "keyword": "Weather",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Webcam",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Article",
-            "service": "tourism"
-        },
-        {
-            "keyword": "ODHActivity",
-            "service": "tourism"
-        },
-        {
-            "keyword": "MetaRegion",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Experience",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Region",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Tourism",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Municipality",
-            "service": "tourism"
-        },
-        {
-            "keyword": "District",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Area",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Ski",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Wine",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Distinct",
-            "service": "tourism"
-        },
-        {
-            "keyword": "GeoConverter",
-            "service": "tourism"
-        },
-        {
-            "keyword": "JsonLD",
-            "service": "tourism"
-        },
-        {
-            "keyword": "Location",
-            "service": "tourism"
-        },
-        {
-            "keyword": "flat,event",
-            "service": "mobility"
-        },
-        {
             "keyword": "v2",
-            "service": "mobility"
+            "service": "mobility",
+            "mapping": {
+                "evuuid": "id"
+            }
         }
     ]
 }
