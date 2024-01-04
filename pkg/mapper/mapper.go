@@ -1,17 +1,41 @@
 package mapper
 
-type Mapper struct {}
+import "encoding/json"
 
-func NewMapper() Mapper {
-	return Mapper{}
+type Mapper struct {
+	mapping map[string]string
 }
 
-func (m Mapper) Transform(input string) (string, error) {
-	return  `
-	{
-		"id": "2022-05-11 00:00:00.000+0000",
-		"start_date": "2022-05-10 00:00:00.000+0000",
-		"end_date": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+func NewMapper() Mapper {
+	return Mapper{
+		mapping: make(map[string]string),
 	}
-	`, nil
+}
+
+func (m *Mapper) Transform(input string) (string, error) {
+
+	var inputResponse map[string]interface{}
+	var outputResponse = make(map[string]interface{})
+
+	err := json.Unmarshal([]byte(input), &inputResponse)
+	if err != nil {
+		return "", err
+	}
+
+	for inputKey, value := range inputResponse {
+		if outputKey, ok := m.mapping[inputKey]; ok {
+			outputResponse[outputKey] = value
+		}
+	}
+
+	modifiedJSON, err := json.Marshal(outputResponse)
+	if err != nil {
+		return "", err
+	}
+
+	return string(modifiedJSON), nil
+}
+
+func (m *Mapper) AddMapping(inputKey string, outputKey string) {
+	m.mapping[inputKey] = outputKey
 }

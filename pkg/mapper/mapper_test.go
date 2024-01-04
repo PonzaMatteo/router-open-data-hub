@@ -13,7 +13,7 @@ func TestMapper(t *testing.T) {
 		var m = NewMapper()
 
 		// configure the mapper ...
-		
+		m.AddMapping("evuuid", "id")
 
 		// Act:
 		actual, err := m.Transform(`
@@ -24,24 +24,23 @@ func TestMapper(t *testing.T) {
 
 		var expected = `
 		{
-			"id": "2022-05-11 00:00:00.000+0000"
+			"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
 		}
 		`
 
 		// Assert:
 		assert.NoError(t, err)
 		assert.JSONEq(t, expected, actual)
-
-	} )
+	})
 
 	t.Run("Mapper should map response from server to configured format", func(t *testing.T) {
-		// Arrange:
+		
 		var m = NewMapper()
 
-		// configure the mapper ...
-		
+		m.AddMapping("evuuid", "id")
+		m.AddMapping("evstart", "start_date")
+		m.AddMapping("evend", "end_date")
 
-		// Act:
 		actual, err := m.Transform(`
 		{
 			"evend": "2022-05-11 00:00:00.000+0000",
@@ -52,26 +51,24 @@ func TestMapper(t *testing.T) {
 
 		var expected = `
 		{
-			"id": "2022-05-11 00:00:00.000+0000",
+			"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
 			"start_date": "2022-05-10 00:00:00.000+0000",
-			"end_date": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+			"end_date": "2022-05-11 00:00:00.000+0000"	
 		}
 		`
 
-		// Assert:
 		assert.NoError(t, err)
 		assert.JSONEq(t, expected, actual)
-
-	} )
+	})
 
 	t.Run("Mapper should map only required fields", func(t *testing.T) {
-		// Arrange:
+
 		var m = NewMapper()
 
-		// configure the mapper ...
-		
+		m.AddMapping("evuuid", "id")
+		m.AddMapping("evstart", "start_date")
+		m.AddMapping("evend", "end_date")
 
-		// Act:
 		actual, err := m.Transform(`
 		{
 			"evend": "2022-05-11 00:00:00.000+0000",
@@ -84,15 +81,13 @@ func TestMapper(t *testing.T) {
 
 		var expected = `
 		{
-			"id": "2022-05-11 00:00:00.000+0000",
+			"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
 			"start_date": "2022-05-10 00:00:00.000+0000",
-			"end_date": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+			"end_date": "2022-05-11 00:00:00.000+0000"			
 		}
 		`
 
-		// Assert:
 		assert.NoError(t, err)
 		assert.JSONEq(t, expected, actual)
-
-	} )
+	})
 }

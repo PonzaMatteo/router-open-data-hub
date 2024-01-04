@@ -1,0 +1,21 @@
+-----------------------------------------
+Date: 2024-01-04
+Participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Inject services in the router
+- Test Router with mock Service
+- Explore UML diagrams with Go 
+
+
+Results:
+
+- Router follows dependency injection for services
+- Created a UML diagram based on Go files. Have a better understanding of UML diagrams
+
+
+Difficulties Found:
+
+- Unexpected test behavior when 2 tests have the same name
