@@ -26,24 +26,26 @@ type Router struct {
 	serviceTypes map[string]service.Service
 }
 
-func NewDefaultRouter() Router {
-	router := NewRouter("config.json")
+func NewDefaultRouter() (Router, error) {
+	router, err := NewRouter("config.json")
+	if err != nil {
+		return Router{}, err
+	}
 	router.AddService("tourism", tourism.TourismService{})
 	router.AddService("mobility", mobility.MobilityService{})
-	return router
+	return router, nil
 }
 
-// TODO err
-func NewRouter(fileName string) Router {
+func NewRouter(fileName string) (Router, error) {
 	var config, err = readConfigFromFile(fileName)
 	if err != nil {
-		panic(err)
+		return Router{}, err
 	}
 	var router = Router{
 		config:       config,
 		serviceTypes: make(map[string]service.Service),
 	}
-	return router
+	return router, nil
 }
 
 func (r *Router) AddService(serviceID string, serviceType service.Service) {

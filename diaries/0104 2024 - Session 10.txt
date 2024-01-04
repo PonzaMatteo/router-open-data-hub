@@ -5,17 +5,15 @@ Participants: Crystal Kwok, Matteo Ponza
 
 Activities Done:
 
-- Inject services in the router
-- Test Router with mock Service
-- Explore UML diagrams with Go 
+- Add Mapper to map output response from server to configuration
+- Add Mapper logic to transform response from server to configured format
+- Add Mapper that reads from config file
 
 
 Results:
 
-- Router follows dependency injection for services
-- Created a UML diagram based on Go files. Have a better understanding of UML diagrams
-
+- 
 
 Difficulties Found:
 
-- Unexpected test behavior when 2 tests have the same name
+- 

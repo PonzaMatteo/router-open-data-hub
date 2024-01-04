@@ -19,12 +19,13 @@ func TestRouter(t *testing.T) {
 
 		path := "/v1/Accommodation/2657B7CBCB85380B253D2FBE28AF100E_REDUCED"
 		method := "GET"
-		var router = NewDefaultRouter()
+		router, err := NewDefaultRouter()
+		assert.NoError(t, err)
 		response, err := router.EntryPoint(path, method)
+		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 		assert.Contains(t, response.Body, `{"Id": "2657B7CBCB85380B253D2FBE28AF100E_REDUCED"}`)
-		assert.NoError(t, err)
 
 		// Verify that we don't have pending mocks
 		assert.True(t, gock.IsDone())
@@ -42,8 +43,10 @@ func TestRouter(t *testing.T) {
 
 		path := "/v2/tree,node"
 		method := "GET"
-		var router = NewDefaultRouter()
+		router, err := NewDefaultRouter()
+		assert.NoError(t, err)
 		response, err := router.EntryPoint(path, method)
+		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 		assert.Contains(t, response.Body, `{"id": "Bicycle"}`)
@@ -63,8 +66,10 @@ func TestRouter(t *testing.T) {
 
 		path := "/v1/Tag/region"
 		method := "GET"
-		var router = NewDefaultRouter()
+		router, err := NewDefaultRouter()
+		assert.NoError(t, err)
 		response, err := router.EntryPoint(path, method)
+		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 		assert.Contains(t, response.Body, `{"Id": "region"}`)
@@ -87,8 +92,10 @@ func TestRouter(t *testing.T) {
 
 		path := "/v1/Does-Not-Exist"
 		method := "GET"
-		var router = NewDefaultRouter()
+		router, err := NewDefaultRouter()
+		assert.NoError(t, err)
 		response, err := router.EntryPoint(path, method)
+		assert.NoError(t, err)
 
 		assert.Equal(t, 404, response.StatusCode, "Wrong Status Code")
 		assert.NoError(t, err)
@@ -106,8 +113,10 @@ func TestRouter(t *testing.T) {
 
 		path := "/v2/Does-Not-Exist"
 		method := "GET"
-		var router = NewDefaultRouter()
+		router, err := NewDefaultRouter()
+		assert.NoError(t, err)
 		response, err := router.EntryPoint(path, method)
+		assert.NoError(t, err)
 
 		assert.Equal(t, 404, response.StatusCode, "Wrong Status Code")
 		assert.NoError(t, err)
