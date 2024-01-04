@@ -97,7 +97,7 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Mapping should come from config file", func(t *testing.T) {
 
-		m, err := NewMapperFromFile("../router/config.json", "v2")
+		m, err := NewMapperFromFile("../router/config.json", "v2/flat,event")
 		assert.NoError(t, err)
 
 		actual, err := m.Transform(`
@@ -123,7 +123,7 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Read input JSON response from file", func(t *testing.T) {
 
-		m, err := NewMapperFromFile("../router/config.json", "v2")
+		m, err := NewMapperFromFile("../router/config.json", "v2/flat,event")
 		assert.NoError(t, err)
 
 		inputJson, err := readResponseFromFile("response.json")
@@ -142,12 +142,75 @@ func TestMapper(t *testing.T) {
 		assert.JSONEq(t, expected, actual)
 	})
 
+
+	t.Run("Mapper should be able to map lists applying the conversion to every element", func(t *testing.T) {
+		// Arrange:
+		var mapper = NewMapper()
+
+		// how do we represent the intention of mapping every element of the array data?
+		 mapper.AddMapping("evuuid", "id") 
+		// b. mapper.AddMappingForEachElement("data", "evuuid", "id")
+		// c. mapper.AddMappingForEachElement("data",  NewMapper("evuuid", "id"))
+
+		// Act:
+		var actual, err = mapper.Transform(`
+		[
+			{ "evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
+			{ "evuuid": "74b0c317-2315-4ead-b45f-4acfce220384" }
+		]
+		`)
+
+		var expected = `
+		[
+			{ "id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
+			{ "id": "74b0c317-2315-4ead-b45f-4acfce220384" }
+		]
+		`
+
+		assert.NoError(t, err)
+		assertEqualJSON(t, expected, actual)
+	})
+
 	t.SkipNow()
+
+	t.Run("Mapper should be able to map fields in an array to to the given format", func(t *testing.T) {
+		// Arrange:
+		var mapper = NewMapper()
+
+		// how do we represent the intention of mapping every element of the array data?
+		 mapper.AddMapping("data.evuuid", "data.id")
+
+		// b. mapper.AddMappingForEachElement("data", "evuuid", "id")
+		// c. mapper.AddMappingForEachElement("data",  NewMapper("evuuid", "id"))
+
+		// Act:
+		var actual, err = mapper.Transform(`
+		{
+			"data": [
+			 { "evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
+			 { "evuuid": "74b0c317-2315-4ead-b45f-4acfce220384" }
+			]
+		}
+		`)
+
+		var expected = `
+		{
+			"data": [
+			 { "id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
+			 { "id": "74b0c317-2315-4ead-b45f-4acfce220384" }
+			]
+		}
+		`
+
+		assert.NoError(t, err)
+		assert.JSONEq(t, expected, actual)
+	})
+
 
 	//to work on
 	t.Run("Read complex JSON response from file", func(t *testing.T) {
 
-		m, err := NewMapperFromFile("../router/config.json", "v2")
+		m, err := NewMapperFromFile("../router/config.json", "v2/flat,event")
 		assert.NoError(t, err)
 
 		inputJson, err := readResponseFromFile("complex-response.json")
@@ -199,4 +262,20 @@ func readResponseFromFile(fileName string) (string, error) {
 		return "", fmt.Errorf("unsupported configuration file extension (`%s`): %s", extension, fileName)
 	}
 	return string(data), nil
+}
+
+func assertEqualJSON(t *testing.T, expected string, actual string) {
+	t.Helper()
+
+	var expectedString = clean(expected)
+	var actualString = clean(actual)
+	assert.Equal(t, expectedString, actualString)
+}
+
+func clean(in string) string {
+	var out = in
+	out = strings.ReplaceAll(out, "\t", "")
+	out = strings.ReplaceAll(out, " ", "")
+	out = strings.ReplaceAll(out, "\n", "")
+	return out
 }

@@ -45,20 +45,14 @@ func NewMapperFromFile(fileName string, keyword string) (Mapper, error) {
 }
 
 func (m *Mapper) Transform(input string) (string, error) {
-
-	var inputResponse map[string]interface{}
-	var outputResponse = make(map[string]interface{})
+	var inputResponse interface{}
 
 	err := json.Unmarshal([]byte(input), &inputResponse)
 	if err != nil {
 		return "", err
 	}
 
-	for inputKey, value := range inputResponse {
-		if outputKey, ok := m.mapping[inputKey]; ok {
-			outputResponse[outputKey] = value
-		}
-	}
+	outputResponse := m.extractMapping(inputResponse)
 
 	modifiedJSON, err := json.Marshal(outputResponse)
 	if err != nil {
@@ -66,6 +60,27 @@ func (m *Mapper) Transform(input string) (string, error) {
 	}
 
 	return string(modifiedJSON), nil
+}
+
+func (m Mapper) extractMapping(inputResponse interface{}) interface{} {
+	switch inputResponse := inputResponse.(type) {
+	case map[string]interface{}:
+		outputResponse := make(map[string]interface{})
+		for inputKey, value := range inputResponse {
+			if outputKey, ok := m.mapping[inputKey]; ok {
+				outputResponse[outputKey] = value
+			}
+		}
+		return outputResponse
+	case []interface{}:
+		var outputResponse []interface{}
+		for _, data := range inputResponse {
+			outputResponse = append(outputResponse, m.extractMapping(data))
+		}
+		return outputResponse
+	default:
+		return inputResponse
+	}
 }
 
 func (m *Mapper) AddMapping(inputKey string, outputKey string) {

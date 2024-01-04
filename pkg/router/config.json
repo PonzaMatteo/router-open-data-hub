@@ -17,13 +17,17 @@
             "service": "tourism"
         },
         {
-            "keyword": "v2",
+            "keyword": "v2/flat,event",
             "service": "mobility",
             "mapping": {
                 "evuuid": "id",
                 "evstart": "start_date",
                 "evend": "end_date"
             }
+        },
+        {
+            "keyword": "v2",
+            "service": "mobility"
         }
     ]
 }
