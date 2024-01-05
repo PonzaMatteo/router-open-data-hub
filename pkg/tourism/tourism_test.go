@@ -10,9 +10,6 @@ import (
 )
 
 func TestTourismService(t *testing.T) {
-
-	// t.SkipNow()
-
 	t.Run("Tourism service should connect to an existing API", func(t *testing.T) {
 		var service = TourismService{}
 

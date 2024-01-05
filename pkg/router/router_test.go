@@ -44,12 +44,12 @@ func TestRouter(t *testing.T) {
 		method := "GET"
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
+
 		response, err := router.EntryPoint(path, method)
 		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 		assert.Contains(t, response.Body, `{"id": "Bicycle"}`)
-		assert.NoError(t, err)
 		assert.True(t, gock.IsDone())
 	})
 
@@ -64,6 +64,7 @@ func TestRouter(t *testing.T) {
 
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
+
 		response, err := router.EntryPoint("/v1/Tag/region", "GET")
 		assert.NoError(t, err)
 
@@ -87,13 +88,14 @@ func TestRouter(t *testing.T) {
 
 		path := "/v1/Does-Not-Exist"
 		method := "GET"
+
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
+
 		response, err := router.EntryPoint(path, method)
 		assert.NoError(t, err)
 
 		assert.Equal(t, 404, response.StatusCode, "Wrong Status Code")
-		assert.NoError(t, err)
 		assert.True(t, gock.IsDone())
 	})
 
@@ -110,11 +112,11 @@ func TestRouter(t *testing.T) {
 		method := "GET"
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
+
 		response, err := router.EntryPoint(path, method)
 		assert.NoError(t, err)
 
 		assert.Equal(t, 404, response.StatusCode, "Wrong Status Code")
-		assert.NoError(t, err)
 		assert.True(t, gock.IsDone())
 	})
 }

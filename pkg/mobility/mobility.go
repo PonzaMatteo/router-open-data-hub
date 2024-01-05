@@ -15,7 +15,6 @@ type Message struct {
 
 func (MobilityService) ExecuteRequest(method string, path string, body []byte) (service.Response, error) {
 	mobilityPath := "https://mobility.api.opendatahub.com" + path
-
 	response, err := request(mobilityPath, method, body)
 	if err != nil {
 		return service.Response{}, fmt.Errorf("failed to execute request to mobility service: %w", err)
@@ -24,7 +23,6 @@ func (MobilityService) ExecuteRequest(method string, path string, body []byte) (
 }
 
 func request(mobilityPath string, method string, body []byte) (service.Response, error) {
-
 	request, err := http.NewRequest(method, mobilityPath, bytes.NewBuffer(body))
 
 	if err != nil {

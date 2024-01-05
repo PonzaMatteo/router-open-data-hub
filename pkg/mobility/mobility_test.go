@@ -9,9 +9,6 @@ import (
 )
 
 func TestMobilityService(t *testing.T) {
-
-	// t.SkipNow()
-
 	t.Run("Mobility service should connect to an existing API", func(t *testing.T) {
 		var service = MobilityService{}
 
