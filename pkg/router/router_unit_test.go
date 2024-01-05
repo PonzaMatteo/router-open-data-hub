@@ -28,8 +28,10 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		router := NewRouter(testConfig)
 		router.AddService("test_service", ts)
 
-		_, err := router.EntryPoint("/test_keyword", "GET")
+		actual, err := router.EntryPoint("/test_keyword", "GET")
+		expected := &service.Response{Body: "response from test service"}
 		assert.NoError(t, err)
+		assert.Equal(t, expected, actual)
 	})
 
 	t.Run("Router should connect to correct service", func(t *testing.T) {
@@ -87,6 +89,36 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 
 		// should not change the case of the path in the actual request
 		assert.Equal(t, []string{"/TEST_KEYWORD"}, requestedPaths)
+	})
+
+	testConfigWithMapping := &config.Config{
+		Routes: []config.Route{
+			{
+				Keyword: "test_keyword",
+				Service: "test_service",
+				Mapping: &map[string]string{"evuuid": "id"},
+			},
+		},
+	}
+
+	t.Run("Router with mapping should connect to mock service", func(t *testing.T) {
+		ts := testService{
+			executeRequest: func(method, path string, body []byte) (service.Response, error) {
+				return service.Response{Body: `{
+					"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+				}`}, nil
+			},
+		}
+
+		router := NewRouter(testConfigWithMapping)
+		router.AddService("test_service", ts)
+
+		actual, err := router.EntryPoint("/test_keyword", "GET")
+		expected := `{
+			"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+		}`
+		assert.NoError(t, err)
+		assert.JSONEq(t, expected, actual.Body)
 	})
 }
 

@@ -47,13 +47,12 @@ func (r *Router) EntryPoint(path string, method string) (*service.Response, erro
 				return nil, err
 			}
 
-			// TODO: review here, important part!
 			if route.Mapping != nil {
-				var mapper = mapper.NewMapperWithMapping(*route.Mapping)
-				
+				var mapper = mapper.NewMapper(*route.Mapping)
+
 				var newBody, err = mapper.Transform(response.Body)
 				if err != nil {
-					panic(err)
+					return nil, err
 				}
 				response.Body = newBody
 			}

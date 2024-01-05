@@ -8,19 +8,21 @@ type Mapper struct {
 	mapping map[string]string
 }
 
-func NewMapper() Mapper {
-	return Mapper{
-		mapping: make(map[string]string),
-	}
+func EmptyMapper() Mapper {
+	return NewMapper(make(map[string]string))
 }
 
-func NewMapperWithMapping(mapping map[string]string) Mapper {
+func NewMapper(mapping map[string]string) Mapper {
 	return Mapper{
 		mapping: mapping,
 	}
 }
 
 func (m *Mapper) Transform(input string) (string, error) {
+	if len(m.mapping) == 0 {
+		return input, nil
+	}
+
 	var inputResponse interface{}
 
 	err := json.Unmarshal([]byte(input), &inputResponse)

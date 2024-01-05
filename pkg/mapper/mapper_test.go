@@ -12,9 +12,27 @@ import (
 
 func TestMapper(t *testing.T) {
 
+	t.Run("Empty mapper should return same output as input", func(t *testing.T) {
+
+		var m = EmptyMapper()
+		actual, err := m.Transform(`
+		{
+			"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+		}
+		`)
+
+		var expected = `
+		{
+			"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+		}
+		`
+		assert.NoError(t, err)
+		assert.JSONEq(t, expected, actual)
+	})
+
 	t.Run("Mapper should map one response from server to configured format", func(t *testing.T) {
 		// Arrange:
-		var m = NewMapper()
+		var m = EmptyMapper()
 
 		// configure the mapper ...
 		m.AddMapping("evuuid", "id")
@@ -39,7 +57,7 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Mapper should map response from server to configured format", func(t *testing.T) {
 
-		var m = NewMapper()
+		var m = EmptyMapper()
 
 		m.AddMapping("evuuid", "id")
 		m.AddMapping("evstart", "start_date")
@@ -67,7 +85,7 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Mapper should map only required fields", func(t *testing.T) {
 
-		var m = NewMapper()
+		var m = EmptyMapper()
 
 		m.AddMapping("evuuid", "id")
 		m.AddMapping("evstart", "start_date")
@@ -97,7 +115,7 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Mapping should come from config file", func(t *testing.T) {
 
-		m := NewMapperWithMapping(map[string]string{
+		m := NewMapper(map[string]string{
 			"evuuid":  "id",
 			"evstart": "start_date",
 			"evend":   "end_date",
@@ -126,7 +144,7 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Read input JSON response from file", func(t *testing.T) {
 
-		m := NewMapperWithMapping(map[string]string{
+		m := NewMapper(map[string]string{
 			"evuuid":  "id",
 			"evstart": "start_date",
 			"evend":   "end_date",
@@ -150,7 +168,7 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Mapper should be able to map lists applying the conversion to every element", func(t *testing.T) {
 		// Arrange:
-		var mapper = NewMapper()
+		var mapper = EmptyMapper()
 
 		// how do we represent the intention of mapping every element of the array data?
 		mapper.AddMapping("evuuid", "id")
@@ -180,7 +198,7 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Mapper should be able to map fields in an array to to the given format", func(t *testing.T) {
 		// Arrange:
-		var mapper = NewMapper()
+		var mapper = EmptyMapper()
 
 		// how do we represent the intention of mapping every element of the array data?
 		mapper.AddMapping("data.evuuid", "data.id")
@@ -214,7 +232,7 @@ func TestMapper(t *testing.T) {
 	//to work on
 	t.Run("Read complex JSON response from file", func(t *testing.T) {
 
-		m := NewMapperWithMapping(map[string]string{
+		m := NewMapper(map[string]string{
 			"evuuid":  "id",
 			"evstart": "start_date",
 			"evend":   "end_date",
@@ -239,7 +257,7 @@ func TestMapper(t *testing.T) {
 	//to work on
 	t.Run("Read input JSON response from mobility-events file", func(t *testing.T) {
 
-		m := NewMapperWithMapping(map[string]string{
+		m := NewMapper(map[string]string{
 			"evuuid":  "id",
 			"evstart": "start_date",
 			"evend":   "end_date",
