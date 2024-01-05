@@ -5,7 +5,8 @@ Participants: Crystal Kwok, Matteo Ponza
 
 Activities Done:
 
-- 
+- Make configuration injectable in Router
+- Add logic to ignore casing when finding the service for a given request
 
 Results:
 

@@ -34,7 +34,7 @@ func (r *Router) AddService(serviceID string, serviceType service.Service) {
 
 func (r *Router) EntryPoint(path string, method string) (*service.Response, error) {
 	for _, route := range r.config.Routes {
-		if strings.Contains(path, route.Keyword) {
+		if strings.Contains(strings.ToLower(path), strings.ToLower(route.Keyword)) {
 			s := r.serviceTypes[route.Service]
 			var err error // declare error first to avoid shadowing
 			response, err := s.ExecuteRequest(method, path, nil)

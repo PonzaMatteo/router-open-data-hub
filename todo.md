@@ -33,8 +33,9 @@ Mobility
 
 
 Todo
-0. make config injectable (it will make testing easier)
 1. make API string comparison lowercase
 2. read json response from services
 3. allow complex json response
 4. extract read file logic into a new package?
+5. move config.json to root of the project, consider adding support for yaml as it may be more readable.
+   1. cool tool to convert json to yaml: https://github.com/TomWright/dasel

@@ -57,6 +57,37 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, "response from test service", response.Body)
 	})
+
+	t.Run("Router should map request correctly even with different case in the keywords", func(t *testing.T) {
+
+		var requestedPaths []string
+
+		ts := testService{
+			executeRequest: func(method, path string, body []byte) (service.Response, error) {
+				requestedPaths = append(requestedPaths, path)
+				return service.Response{Body: "response from test service", StatusCode: 200}, nil
+			},
+		}
+
+		ts1 := testService{
+			executeRequest: func(method, path string, body []byte) (service.Response, error) {
+				requestedPaths = append(requestedPaths, path)
+				return service.Response{Body: "response from test service 1", StatusCode: 200}, nil
+			},
+		}
+
+		router := NewRouter(testConfig)
+
+		router.AddService("test_service_1", ts1)
+		router.AddService("test_service", ts)
+
+		response, err := router.EntryPoint("/TEST_KEYWORD", "GET")
+		assert.NoError(t, err)
+		assert.Equal(t, "response from test service", response.Body)
+
+		// should not change the case of the path in the actual request
+		assert.Equal(t, []string{"/TEST_KEYWORD"}, requestedPaths)
+	})
 }
 
 type testService struct {
