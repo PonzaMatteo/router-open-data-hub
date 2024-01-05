@@ -1,6 +1,7 @@
 package router
 
 import (
+	"log"
 	"opendatahubchallenge/pkg/config"
 	"opendatahubchallenge/pkg/mapper"
 	"opendatahubchallenge/pkg/mobility"
@@ -42,7 +43,6 @@ func (r *Router) EntryPoint(path string, method string) (*service.Response, erro
 			if err != nil {
 				return nil, err
 			}
-
 			// TODO: review here, important part!
 			if route.Mapping != nil {
 				var mapper = mapper.NewMapperWithMapping(*route.Mapping)
@@ -66,16 +66,23 @@ func (r *Router) EntryPoint(path string, method string) (*service.Response, erro
 }
 
 func (r *Router) AttemptRequest(method string, path string) (*service.Response, error) {
-	var response service.Response
-	for _, serviceType := range r.serviceTypes {
+	for id, serviceType := range r.serviceTypes {
+		log.Println("[router]: attempting to contact service ", id, "for request", method, path)
+
 		var err error
-		response, err = serviceType.ExecuteRequest(method, path, nil)
+		response, err := serviceType.ExecuteRequest(method, path, nil)
 		if err != nil {
-			return nil, err
+			log.Println("[router]: service", id, "responded with error, skip and trying with the next one")
+			continue
 		}
+
 		if response.StatusCode == 200 {
-			break
+			return &response, nil
 		}
 	}
-	return &response, nil
+
+	return &service.Response{
+		StatusCode: 404,
+		Body:       "",
+	}, nil
 }

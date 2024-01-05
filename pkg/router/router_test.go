@@ -8,8 +8,8 @@ import (
 )
 
 func TestRouter(t *testing.T) {
-	t.Run("Router should connect to tourism service", func(t *testing.T) {
 
+	t.Run("Router should connect to tourism service", func(t *testing.T) {
 		defer gock.Off()
 
 		gock.New("https://tourism.opendatahub.com").
@@ -17,11 +17,10 @@ func TestRouter(t *testing.T) {
 			Reply(200).
 			JSON(`{"Id": "2657B7CBCB85380B253D2FBE28AF100E_REDUCED"}`)
 
-		path := "/v1/Accommodation/2657B7CBCB85380B253D2FBE28AF100E_REDUCED"
-		method := "GET"
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
-		response, err := router.EntryPoint(path, method)
+
+		response, err := router.EntryPoint("/v1/Accommodation/2657B7CBCB85380B253D2FBE28AF100E_REDUCED", "GET")
 		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
@@ -55,7 +54,6 @@ func TestRouter(t *testing.T) {
 	})
 
 	t.Run("Router should connect to tourism service without mapping", func(t *testing.T) {
-
 		defer gock.Off()
 		gock.Observe(gock.DumpRequest)
 
@@ -64,16 +62,13 @@ func TestRouter(t *testing.T) {
 			Reply(200).
 			JSON(`{"Id": "region"}`)
 
-		path := "/v1/Tag/region"
-		method := "GET"
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
-		response, err := router.EntryPoint(path, method)
+		response, err := router.EntryPoint("/v1/Tag/region", "GET")
 		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
 		assert.Contains(t, response.Body, `{"Id": "region"}`)
-		assert.NoError(t, err)
 		assert.True(t, gock.IsDone())
 	})
 
