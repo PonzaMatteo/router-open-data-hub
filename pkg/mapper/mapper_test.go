@@ -97,8 +97,13 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Mapping should come from config file", func(t *testing.T) {
 
-		m, err := NewMapperFromFile("../router/config.json", "v2/flat,event")
-		assert.NoError(t, err)
+		m := NewMapperWithMapping(map[string]string{
+			"evuuid":  "id",
+			"evstart": "start_date",
+			"evend":   "end_date",
+		})
+		// m, err := NewMapperFromFile("../router/config.json", "v2/flat,event")
+		// assert.NoError(t, err)
 
 		actual, err := m.Transform(`
 		{

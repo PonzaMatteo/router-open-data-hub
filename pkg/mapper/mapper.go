@@ -28,6 +28,13 @@ func NewMapper() Mapper {
 	}
 }
 
+func NewMapperWithMapping(mapping map[string]string) Mapper {
+	return Mapper{
+		mapping: mapping,
+	}
+}
+
+// TODO: consider removing this function
 func NewMapperFromFile(fileName string, keyword string) (Mapper, error) {
 	var config, err = readConfigFromFile(fileName)
 	if err != nil {

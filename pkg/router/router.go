@@ -2,6 +2,7 @@ package router
 
 import (
 	"opendatahubchallenge/pkg/config"
+	"opendatahubchallenge/pkg/mapper"
 	"opendatahubchallenge/pkg/mobility"
 	"opendatahubchallenge/pkg/service"
 	"opendatahubchallenge/pkg/tourism"
@@ -41,6 +42,17 @@ func (r *Router) EntryPoint(path string, method string) (*service.Response, erro
 			if err != nil {
 				return nil, err
 			}
+
+			// TODO: review here, important part!
+			if route.Mapping != nil {
+				var mapper = mapper.NewMapperWithMapping(*route.Mapping)
+				var newBody, err = mapper.Transform(response.Body)
+				if err != nil {
+					panic(err)
+				}
+				response.Body = newBody
+			}
+
 			return &response, nil
 		}
 	}
