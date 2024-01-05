@@ -102,8 +102,6 @@ func TestMapper(t *testing.T) {
 			"evstart": "start_date",
 			"evend":   "end_date",
 		})
-		// m, err := NewMapperFromFile("../router/config.json", "v2/flat,event")
-		// assert.NoError(t, err)
 
 		actual, err := m.Transform(`
 		{
@@ -128,8 +126,11 @@ func TestMapper(t *testing.T) {
 
 	t.Run("Read input JSON response from file", func(t *testing.T) {
 
-		m, err := NewMapperFromFile("../router/config.json", "v2/flat,event")
-		assert.NoError(t, err)
+		m := NewMapperWithMapping(map[string]string{
+			"evuuid":  "id",
+			"evstart": "start_date",
+			"evend":   "end_date",
+		})
 
 		inputJson, err := readResponseFromFile("response.json")
 		assert.NoError(t, err)
@@ -213,8 +214,11 @@ func TestMapper(t *testing.T) {
 	//to work on
 	t.Run("Read complex JSON response from file", func(t *testing.T) {
 
-		m, err := NewMapperFromFile("../router/config.json", "v2/flat,event")
-		assert.NoError(t, err)
+		m := NewMapperWithMapping(map[string]string{
+			"evuuid":  "id",
+			"evstart": "start_date",
+			"evend":   "end_date",
+		})
 
 		inputJson, err := readResponseFromFile("complex-response.json")
 		assert.NoError(t, err)
@@ -235,8 +239,11 @@ func TestMapper(t *testing.T) {
 	//to work on
 	t.Run("Read input JSON response from mobility-events file", func(t *testing.T) {
 
-		m, err := NewMapperFromFile("../router/config.json", "v2")
-		assert.NoError(t, err)
+		m := NewMapperWithMapping(map[string]string{
+			"evuuid":  "id",
+			"evstart": "start_date",
+			"evend":   "end_date",
+		})
 
 		inputJson, err := readResponseFromFile("../response-samples/mobility-events.json")
 		assert.NoError(t, err)

@@ -50,6 +50,7 @@ func (r *Router) EntryPoint(path string, method string) (*service.Response, erro
 			// TODO: review here, important part!
 			if route.Mapping != nil {
 				var mapper = mapper.NewMapperWithMapping(*route.Mapping)
+				
 				var newBody, err = mapper.Transform(response.Body)
 				if err != nil {
 					panic(err)
