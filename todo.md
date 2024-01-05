@@ -1,14 +1,5 @@
 ## TODO LIST
 
-- [ ] TourismService - Allow methods other than GET
-- [ ] TourismService - Use mock in test
-- [ ] TourismService - Test that body is read properly
-- [ ] Build the MobilityService
-- [ ] Build the interface
-- [ ] Build generic component RouterService 
-
-
-
 mobility-events
 - "evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
 - "evstart": "2022-05-10 00:00:00.000+0000"
@@ -32,10 +23,8 @@ Mobility
 
 
 
-Todo
-1. make API string comparison lowercase
-2. read json response from services
-3. allow complex json response
-4. extract read file logic into a new package?
-5. move config.json to root of the project, consider adding support for yaml as it may be more readable.
-   1. cool tool to convert json to yaml: https://github.com/TomWright/dasel
+TODOs:
+
+- [ ] read json response from services
+- [ ] allow complex json response
+- [ ] move config.json to root of the project, consider adding support for yaml as it may be more readable. Cool tool to convert json to yaml: https://github.com/TomWright/dasel
