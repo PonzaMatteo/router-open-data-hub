@@ -12,7 +12,7 @@ Activities Done:
 
 Results:
 
-- 
+- Mapper now can rename fields of JSON objects and Lists
 
 Difficulties Found:
 
