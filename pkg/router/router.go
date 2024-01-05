@@ -1,51 +1,31 @@
 package router
 
 import (
-	"encoding/json"
-	"fmt"
+	"opendatahubchallenge/pkg/config"
 	"opendatahubchallenge/pkg/mobility"
 	"opendatahubchallenge/pkg/service"
 	"opendatahubchallenge/pkg/tourism"
-	"os"
-	"path"
 	"strings"
 )
 
-type Route struct {
-	Keyword string
-	Service string
-	Mapping *map[string]string
-}
-
-type Config struct {
-	Routes []Route
-}
-
 type Router struct {
-	config       *Config
+	config       *config.Config
 	serviceTypes map[string]service.Service
 }
 
 func NewDefaultRouter() (Router, error) {
-	router, err := NewRouter("config.json")
-	if err != nil {
-		return Router{}, err
-	}
+	defaultConfig := config.GetDefault()
+	router := NewRouter(defaultConfig)
 	router.AddService("tourism", tourism.TourismService{})
 	router.AddService("mobility", mobility.MobilityService{})
 	return router, nil
 }
 
-func NewRouter(fileName string) (Router, error) {
-	var config, err = readConfigFromFile(fileName)
-	if err != nil {
-		return Router{}, err
-	}
-	var router = Router{
+func NewRouter(config *config.Config) Router {
+	return Router{
 		config:       config,
 		serviceTypes: make(map[string]service.Service),
 	}
-	return router, nil
 }
 
 func (r *Router) AddService(serviceID string, serviceType service.Service) {
@@ -86,23 +66,4 @@ func (r *Router) AttemptRequest(method string, path string) (*service.Response, 
 		}
 	}
 	return &response, nil
-}
-
-func readConfigFromFile(fileName string) (*Config, error) {
-	var configData Config
-	data, err := os.ReadFile(fileName)
-	if err != nil {
-		return nil, err
-	}
-
-	extension := strings.ToLower(path.Ext(fileName))
-	if extension != ".json" {
-		return nil, fmt.Errorf("unsupported configuration file extension (`%s`): %s", extension, fileName)
-	}
-
-	err = json.Unmarshal([]byte(data), &configData)
-	if err != nil {
-		return nil, err
-	}
-	return &configData, nil
 }

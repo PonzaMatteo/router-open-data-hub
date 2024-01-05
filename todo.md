@@ -33,6 +33,7 @@ Mobility
 
 
 Todo
+0. make config injectable (it will make testing easier)
 1. make API string comparison lowercase
 2. read json response from services
 3. allow complex json response

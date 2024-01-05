@@ -142,13 +142,12 @@ func TestMapper(t *testing.T) {
 		assert.JSONEq(t, expected, actual)
 	})
 
-
 	t.Run("Mapper should be able to map lists applying the conversion to every element", func(t *testing.T) {
 		// Arrange:
 		var mapper = NewMapper()
 
 		// how do we represent the intention of mapping every element of the array data?
-		 mapper.AddMapping("evuuid", "id") 
+		mapper.AddMapping("evuuid", "id")
 		// b. mapper.AddMappingForEachElement("data", "evuuid", "id")
 		// c. mapper.AddMappingForEachElement("data",  NewMapper("evuuid", "id"))
 
@@ -178,7 +177,7 @@ func TestMapper(t *testing.T) {
 		var mapper = NewMapper()
 
 		// how do we represent the intention of mapping every element of the array data?
-		 mapper.AddMapping("data.evuuid", "data.id")
+		mapper.AddMapping("data.evuuid", "data.id")
 
 		// b. mapper.AddMappingForEachElement("data", "evuuid", "id")
 		// c. mapper.AddMappingForEachElement("data",  NewMapper("evuuid", "id"))
@@ -205,7 +204,6 @@ func TestMapper(t *testing.T) {
 		assert.NoError(t, err)
 		assert.JSONEq(t, expected, actual)
 	})
-
 
 	//to work on
 	t.Run("Read complex JSON response from file", func(t *testing.T) {
