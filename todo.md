@@ -26,7 +26,6 @@ Mobility
 
 TODOs:
 
-- [ ] read json response from services
 - [ ] allow complex json response
 - [ ] move config.json to root of the project, consider adding support for yaml as it may be more readable. Cool tool to convert json to yaml: <https://github.com/TomWright/dasel>
 - [ ] would be nice to make the whole thing a mini-app that ties together all the poings

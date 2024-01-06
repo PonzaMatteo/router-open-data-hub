@@ -35,38 +35,45 @@ func (r *Router) AddService(serviceID string, serviceType service.Service) {
 }
 
 func (r *Router) EntryPoint(path string, method string) (*service.Response, error) {
-	for _, route := range r.config.Routes {
-		if strings.Contains(strings.ToLower(path), strings.ToLower(route.Keyword)) {
-			log.Println("[router]: identified service ", route.Service, " for serving the request", method, path)
-
-			s := r.serviceTypes[route.Service]
-
-			var err error // declare error first to avoid shadowing
-			response, err := s.ExecuteRequest(method, path, nil)
-			if err != nil {
-				return nil, err
-			}
-
-			if route.Mapping != nil {
-				var mapper = mapper.NewMapper(*route.Mapping)
-
-				var newBody, err = mapper.Transform(response.Body)
-				if err != nil {
-					return nil, err
-				}
-				response.Body = newBody
-			}
-
-			return &response, nil
-		}
+	route, ok := r.identifyRoute(path)
+	if !ok {
+		return r.AttemptRequest(method, path)
 	}
-
-	response, err := r.AttemptRequest(method, path)
+		
+	s := r.serviceTypes[route.Service]
+	response, err := s.ExecuteRequest(method, path, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	return response, nil
+	m := getMapper(route)
+	newBody, err := m.Transform(response.Body)
+	if err != nil {
+		return nil, err
+	}
+	response.Body = newBody
+
+	return &response, nil
+}
+
+func (r *Router) identifyRoute(path string) (config.Route, bool) {
+	for _, route := range r.config.Routes {
+		if strings.Contains(strings.ToLower(path), strings.ToLower(route.Keyword)) {
+			log.Println("[router]: identified service ", route.Service, " for serving the request", path)
+			return route, true
+		}
+	}
+	return config.Route{}, false
+}
+
+func getMapper(route config.Route) mapper.Mapper {
+	var m mapper.Mapper
+	if route.Mapping == nil {
+		m = mapper.EmptyMapper()
+	} else {
+		m = mapper.NewMapper(*route.Mapping)
+	}
+	return m
 }
 
 func (r *Router) AttemptRequest(method string, path string) (*service.Response, error) {

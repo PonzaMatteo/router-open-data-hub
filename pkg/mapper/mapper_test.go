@@ -166,6 +166,109 @@ func TestMapper(t *testing.T) {
 		assert.JSONEq(t, expected, actual)
 	})
 
+	t.Run("Read complex JSON response", func(t *testing.T) {
+
+		var mapper = EmptyMapper()
+
+		mapper.AddMapping("data.evuuid", "test.id")
+		mapper.AddMapping("data.evstart", "test.start_date")
+		mapper.AddMapping("data.evend", "test.end_date")
+
+
+		var actual, err = mapper.Transform(`
+		{
+			"data": {
+				"evend": "2022-05-11 00:00:00.000+0000",
+				"evseriesuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
+				"evstart": "2022-05-10 00:00:00.000+0000",
+				"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+			}
+		  }
+		`)
+
+		var expected = `
+		{
+			"test": 
+			{
+				"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
+				"start_date": "2022-05-10 00:00:00.000+0000",
+				"end_date": "2022-05-11 00:00:00.000+0000"			
+			}
+		  }
+		`
+
+		assert.NoError(t, err)
+		assert.JSONEq(t, expected, actual)
+	})
+
+	t.Run("Mapper should be able to map fields in an array to to the given format", func(t *testing.T) {
+		var mapper = EmptyMapper()
+
+		mapper.AddMapping("data.evuuid", "data.id")
+
+		// Act:
+		var actual, err = mapper.Transform(`
+		{
+			"data": [
+			 { "evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
+			 { "evuuid": "74b0c317-2315-4ead-b45f-4acfce220384" }
+			]
+		}
+		`)
+
+		var expected = `
+		{
+			"data": [
+			 { "id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
+			 { "id": "74b0c317-2315-4ead-b45f-4acfce220384" }
+			]
+		}
+		`
+
+		assert.NoError(t, err)
+		assert.JSONEq(t, expected, actual)
+	})
+
+
+
+	t.SkipNow()
+
+	//to work on
+	t.Run("Read complex JSON response with error", func(t *testing.T) {
+
+		var mapper = EmptyMapper()
+
+		mapper.AddMapping("data.evuuid", "test.id")
+		mapper.AddMapping("data.evstart", "data.start_date")
+		mapper.AddMapping("data.evend", "test.end_date")
+
+
+		var actual, err = mapper.Transform(`
+		{
+			"data": {
+				"evend": "2022-05-11 00:00:00.000+0000",
+				"evseriesuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
+				"evstart": "2022-05-10 00:00:00.000+0000",
+				"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+			}
+		  }
+		`)
+
+		var expected = `
+		{
+			"test": 
+			{
+				"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
+				"start_date": "2022-05-10 00:00:00.000+0000",
+				"end_date": "2022-05-11 00:00:00.000+0000"			
+			}
+		  }
+		`
+
+		assert.NoError(t, err)
+		assert.JSONEq(t, expected, actual)
+	})
+
 	t.Run("Mapper should be able to map lists applying the conversion to every element", func(t *testing.T) {
 		// Arrange:
 		var mapper = EmptyMapper()
@@ -192,66 +295,6 @@ func TestMapper(t *testing.T) {
 
 		assert.NoError(t, err)
 		assertEqualJSON(t, expected, actual)
-	})
-
-	t.SkipNow()
-
-	t.Run("Mapper should be able to map fields in an array to to the given format", func(t *testing.T) {
-		// Arrange:
-		var mapper = EmptyMapper()
-
-		// how do we represent the intention of mapping every element of the array data?
-		mapper.AddMapping("data.evuuid", "data.id")
-
-		// b. mapper.AddMappingForEachElement("data", "evuuid", "id")
-		// c. mapper.AddMappingForEachElement("data",  NewMapper("evuuid", "id"))
-
-		// Act:
-		var actual, err = mapper.Transform(`
-		{
-			"data": [
-			 { "evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
-			 { "evuuid": "74b0c317-2315-4ead-b45f-4acfce220384" }
-			]
-		}
-		`)
-
-		var expected = `
-		{
-			"data": [
-			 { "id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
-			 { "id": "74b0c317-2315-4ead-b45f-4acfce220384" }
-			]
-		}
-		`
-
-		assert.NoError(t, err)
-		assert.JSONEq(t, expected, actual)
-	})
-
-	//to work on
-	t.Run("Read complex JSON response from file", func(t *testing.T) {
-
-		m := NewMapper(map[string]string{
-			"evuuid":  "id",
-			"evstart": "start_date",
-			"evend":   "end_date",
-		})
-
-		inputJson, err := readResponseFromFile("complex-response.json")
-		assert.NoError(t, err)
-
-		actual, err := m.Transform(inputJson)
-		var expected = `
-		{
-			"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
-			"start_date": "2022-05-10 00:00:00.000+0000",
-			"end_date": "2022-05-11 00:00:00.000+0000"			
-		}
-		`
-
-		assert.NoError(t, err)
-		assert.JSONEq(t, expected, actual)
 	})
 
 	//to work on

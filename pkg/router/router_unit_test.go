@@ -1,6 +1,7 @@
 package router
 
 import (
+	"errors"
 	"opendatahubchallenge/pkg/config"
 	"opendatahubchallenge/pkg/service"
 	"testing"
@@ -119,6 +120,36 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		}`
 		assert.NoError(t, err)
 		assert.JSONEq(t, expected, actual.Body)
+	})
+
+	t.Run("Router should return error if response body for the mapper is not a valid json", func(t *testing.T) {
+		ts := testService{
+			executeRequest: func(method, path string, body []byte) (service.Response, error) {
+				return service.Response{
+					Body: `this is not a valid json`,
+					}, nil
+			},
+		}
+
+		router := NewRouter(testConfigWithMapping)
+		router.AddService("test_service", ts)
+
+		_, err := router.EntryPoint("/test_keyword", "GET")
+		assert.Error(t, err)
+	})
+
+	t.Run("Router should return error if service in the mapping returns error", func(t *testing.T) {
+		ts := testService{
+			executeRequest: func(method, path string, body []byte) (service.Response, error) {
+				return service.Response{}, errors.New("TESTING ERROR")
+			},
+		}
+
+		router := NewRouter(testConfigWithMapping)
+		router.AddService("test_service", ts)
+
+		_, err := router.EntryPoint("/test_keyword", "GET")
+		assert.Error(t, err)
 	})
 }
 
