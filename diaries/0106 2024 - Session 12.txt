@@ -1,0 +1,17 @@
+-----------------------------------------
+Date: 2024-01-05
+Participants: Crystal Kwok, Matteo Ponza
+-----------------------------------------
+
+Activities Done:
+
+- Develop further the Mapper class to account for different scenarios
+- Add end-to-end test against open data hub APIs
+
+Results:
+
+- More or less all the desired functionalities have been implemented
+
+Difficulties Found:
+
+- N/A

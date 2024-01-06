@@ -1,0 +1,15 @@
+routes:
+    - keyword: /v2/flat,event
+      service: mobility
+      mapping:
+        data.evuuid: data.id
+        data.evstart: data.start_date
+        data.evend: data.end_date
+    - keyword: /v1/Event?
+      service: tourism
+      mapping:
+        Items.Id: data.id
+        Items.DateBegin: data.start_date
+        Items.DateEnd: data.end_date
+    - keyword: /v1/Accommodation
+      service: tourism
