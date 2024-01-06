@@ -1,6 +1,7 @@
 package mapper
 
 import (
+	"bytes"
 	"encoding/json"
 	"strings"
 )
@@ -29,125 +30,68 @@ func (m *Mapper) Transform(input string) (string, error) {
 	}
 
 	var inputResponse interface{}
+	if err := json.NewDecoder(strings.NewReader(input)).Decode(&inputResponse); err != nil {
+		return "", err
 
-	err := json.Unmarshal([]byte(input), &inputResponse)
-	if err != nil {
+	}
+
+	_, outputResponse := m.transformResponse("", inputResponse)
+	var output bytes.Buffer
+	if err := json.NewEncoder(&output).Encode(&outputResponse); err != nil {
 		return "", err
 	}
-
-	// outputResponse := m.extractMapping(inputResponse)
-	_, outputResponse := m.extractInternalMapping("", inputResponse)
-
-	modifiedJSON, err := json.Marshal(outputResponse)
-	if err != nil {
-		return "", err
-	}
-
-	return string(modifiedJSON), nil
+	return output.String(), nil
 }
 
-func (m Mapper) extractMapping(inputResponse interface{}) interface{} {
-	switch inputResponse := inputResponse.(type) {
-	case map[string]interface{}:
-
-		outputResponse := make(map[string]interface{})
-
-		for inputKey, value := range inputResponse {
-			switch value := value.(type) {
-			case map[string]interface{}:
-				outputKey, extractedValues := m.extractInternalMapping(inputKey, value)
-				outputResponse[outputKey] = extractedValues
-			case []interface{}:
-				var extractedValues []interface{}
-				for _, v := range value {
-					outputKey, extractedValue := m.extractInternalMapping(inputKey, v)
-					extractedValues = append(extractedValues, extractedValue)
-					outputResponse[outputKey] = extractedValues
-				}
-			default:
-				if outputKey, ok := m.mapping[inputKey]; ok {
-					outputResponse[outputKey] = value
-				}
-			}
-		}
-
-		return outputResponse
-	case []interface{}:
-		var outputResponse []interface{}
-		for _, data := range inputResponse {
-			outputResponse = append(outputResponse, m.extractMapping(data))
-		}
-		return outputResponse
-	default:
-		return inputResponse
+func (m *Mapper) transformResponse(previousInputPath string, inputResponse interface{}) (string, interface{}) {
+	if outputKey, ok := m.mapping[previousInputPath]; ok {
+		return outputKey, inputResponse
 	}
-}
 
-func (m Mapper) extractInternalMapping(previousInputKey string, inputResponse interface{}) (string, interface{}) {
 	switch inputResponse := inputResponse.(type) {
 	case map[string]interface{}:
-
 		outputResponse := make(map[string]interface{})
-		currentOutputKey := ""
+		currentOutputPath := ""
 
-		for inputKey, value := range inputResponse {
-			outputKey, output := m.extractInternalMapping(determinePath(previousInputKey, inputKey), value)
-			if outputKey != "" {
-				if strings.Contains(outputKey, ".") {
-					outputKeys := strings.Split(outputKey, ".")
-					newOutputKey := outputKeys[len(outputKeys)-1]
-
-					if currentOutputKey != "" && currentOutputKey != outputKeys[len(outputKeys)-2] {
-						panic("Error due to different mapping: `" + currentOutputKey + "` --- `" + outputKeys[len(outputKeys)-2] + "`")
-					}
-					currentOutputKey = outputKeys[len(outputKeys)-2]
-					outputResponse[newOutputKey] = output
-
-				} else {
-					outputResponse[outputKey] = output
-					currentOutputKey = outputKey
-				}
+		for inputKey, input := range inputResponse {
+			outputPath, output := m.transformResponse(determinePath(previousInputPath, inputKey), input)
+			if outputPath != "" {
+				previousPath, outputKey := splitPath(outputPath)
+				assertSingleOutputPath(currentOutputPath, previousPath)
+				currentOutputPath = previousPath
+				outputResponse[outputKey] = output
 			}
-
-			// switch value := value.(type) {
-			// case map[string]interface{}:
-
-			// default:
-			// 	if outputKey, ok := m.mapping[]; ok {
-
-			// 		if previousInputKey != "" {
-			// 			outputKeys := strings.Split(outputKey, ".")
-			// 			newOutputKey := outputKeys[len(outputKeys)-1]
-			// 			if previousOutputKey != "" && previousOutputKey != outputKeys[len(outputKeys)-2] {
-			// 				panic("Error due to different mapping: `" + previousOutputKey+ "` --- `" + outputKeys[len(outputKeys)-2]+"`")
-			// 			}
-			// 			previousOutputKey = outputKeys[len(outputKeys)-2]
-			// 			outputResponse[newOutputKey] = value
-			// 		} else {
-			// 			outputResponse[outputKey] = value
-			// 		}
-			// 	}
-			// }
 		}
-		return currentOutputKey, outputResponse
-
+		return currentOutputPath, outputResponse
 	case []interface{}:
 		var extractedValues []interface{}
 		var outputKey string
-		var extractedValue interface{}
 		for _, v := range inputResponse {
-			outputKey, extractedValue = m.extractInternalMapping(previousInputKey, v)
-			extractedValues = append(extractedValues, extractedValue)
+			var value interface{}
+			outputKey, value = m.transformResponse(previousInputPath, v)
+			extractedValues = append(extractedValues, value)
 		}
 		return outputKey, extractedValues
 
 	default:
-		if outputKey, ok := m.mapping[previousInputKey]; ok {
-			return outputKey, inputResponse
-		} else {
-			return "", nil
-		}
+		return "", nil
 	}
+}
+
+func assertSingleOutputPath(currentOutputPath string, previousPath string) {
+	if currentOutputPath != "" && currentOutputPath != previousPath {
+		panic("Error due to different mapping: `" + currentOutputPath + "` --- `" + previousPath + "`")
+	}
+}
+
+func splitPath(path string) (string, string) {
+	if strings.Contains(path, ".") {
+		keys := strings.Split(path, ".")
+		lastKey := keys[len(keys)-1]
+		prefix := strings.Join(keys[0:len(keys)-1], ".")
+		return prefix, lastKey
+	}
+	return "", path
 }
 
 func determinePath(previousInputKey string, inputKey string) string {
@@ -156,37 +100,3 @@ func determinePath(previousInputKey string, inputKey string) string {
 	}
 	return previousInputKey + "." + inputKey
 }
-
-// func (m Mapper) extractInternalMapping(previousInputKey string, inputResponse interface{}) (string, interface{}) {
-// 	switch inputResponse := inputResponse.(type) {
-// 	case map[string]interface{}:
-
-// 		outputResponse := make(map[string]interface{})
-// 		previousOutputKey := ""
-
-// 		for inputKey, value := range inputResponse {
-// 			newInputKey := previousInputKey
-
-// 			if outputKey, ok := m.mapping[newInputKey]; ok {
-// 				outputKeys := strings.Split(outputKey, ".")
-// 				newOutputKey := outputKeys[len(outputKeys)-1]
-// 				if previousOutputKey != "" && previousOutputKey != outputKeys[len(outputKeys)-2] {
-// 					panic("Error due to different mapping: `" + previousOutputKey+ "` --- `" + outputKeys[len(outputKeys)-2]+"`")
-// 				}
-// 				previousOutputKey = outputKeys[len(outputKeys)-2]
-// 				outputResponse[newOutputKey] = value
-// 			} else {
-// 				switch value := value.(type) {
-// 				case map[string]interface{}:
-// 					previousOutputKey, output := m.extractInternalMapping(newInputKey  + "." + inputKey, value)
-// 					if previousOutputKey != "" {
-// 						outputResponse[previousOutputKey] = output
-// 					}
-// 				}
-// 			}
-// 		}
-// 		return previousOutputKey, outputResponse
-// 	default:
-// 		return "", inputResponse
-// 	}
-// }

@@ -383,8 +383,8 @@ func TestMapper(t *testing.T) {
 		var mapper = EmptyMapper()
 
 		mapper.AddMapping("data.evuuid", "data.id")
-		mapper.AddMapping("data.evstart", "test.start_date")
-		mapper.AddMapping("data.evend", "data.end_date")
+		mapper.AddMapping("data.evstart", "data.start_date")
+		mapper.AddMapping("data.evend", "test.end_date")
 
 		assert.Panics(t, func() {
 			mapper.Transform(`
@@ -394,6 +394,32 @@ func TestMapper(t *testing.T) {
 					"evseriesuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
 					"evstart": "2022-05-10 00:00:00.000+0000",
 					"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+				}
+			  }
+			`)
+		})
+
+	})
+
+	
+	t.Run("Read complex JSON response that should panic in multiple nested loop", func(t *testing.T) {
+
+		var mapper = EmptyMapper()
+
+		mapper.AddMapping("another-property.data.evuuid", "another-property.test.id")
+		mapper.AddMapping("another-property.data.evstart", "another-property.data.start_date")
+		mapper.AddMapping("another-property.data.evend", "another-property.test.end_date")
+
+		assert.Panics(t, func() {
+			mapper.Transform(`
+			{
+				"another-property": {
+					"data": {
+						"evend": "2022-05-11 00:00:00.000+0000",
+						"evseriesuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
+						"evstart": "2022-05-10 00:00:00.000+0000",
+						"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
+					}
 				}
 			  }
 			`)

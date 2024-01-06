@@ -1,0 +1,70 @@
+{
+  "offset": 0,
+  "data": [
+    {
+      "evcategory": "avvenimenti attuali | Aktuelle Ereignisse",
+      "evdescription": " | ",
+      "evend": "2022-05-11 00:00:00.000+0000",
+      "evmetadata": {
+        "placeDe": "In Richtung Norden zwischen Bozen Süd und Bozen Nord SPERRE ab Dienstag, 10.05.2022 - 21:00 Uhr bis Mittwoch, 11.05.2022 - 05:00 Uhr wegen Arbeiten.",
+        "placeIt": "In direzione nord tra Bolzano Sud e Bolzano Nord CHIUSURA al traffico dalle ore 21:00 di martedí, 10.05.2022 fino alle ore 05:00 di mercoledì, 11.05.2022 a causa di lavori.",
+        "tycodeDe": "Aktuelle Ereignisse",
+        "tycodeIt": "avvenimenti attuali",
+        "messageId": 126,
+        "actualMail": 0,
+        "subTycodeDe": "kurzfristige oder zeitweilige Sperre",
+        "subTycodeIt": "chiusura temporanea",
+        "tycodeValue": "AKTUELLES",
+        "messageGradId": 4,
+        "messageStatus": 0,
+        "messageTypeId": 1,
+        "messageZoneId": 3,
+        "subTycodeValue": "SPERRE",
+        "messageStreetId": 178,
+        "messageStreetNr": "A 22 ",
+        "json_featuretype": "con coordinate",
+        "messageGradDescDe": "Behinderungen",
+        "messageGradDescIt": "Intralci al traffico",
+        "messageTypeDescDe": "Aktuelle Lage",
+        "messageTypeDescIt": "Situazione attuale",
+        "messageZoneDescDe": "Zone 3 - Bozen-Unterland",
+        "messageZoneDescIt": "Zona 3 - Bolzano-Bassa Atesina",
+        "publisherDateTime": "2022-05-10T12:40:00",
+        "messageStreetWapDescDe": "A 22 Brennerautobahn",
+        "messageStreetWapDescIt": "A 22 del Brennero",
+        "messageStreetHierarchie": 100001,
+        "messageStreetInternetDescDe": "Brennerautobahn",
+        "messageStreetInternetDescIt": "Autostrada del Brennero"
+      },
+      "evname": "126",
+      "evorigin": "PROVINCE_BZ",
+      "evseriesuuid": "53a6343f-e524-51ea-a280-4cc4c1bc7ff3",
+      "evstart": "2022-05-10 00:00:00.000+0000",
+      "evtransactiontime": "2022-05-10 10:50:00.591+0000",
+      "evuuid": "53a6343f-e524-51ea-a280-4cc4c1bc7ff3",
+      "evlgeometry": {
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:4326"
+          }
+        },
+        "bbox": [
+          11.335875203,
+          46.486952506,
+          11.335875203,
+          46.486952506
+        ],
+        "type": "Point",
+        "coordinates": [
+          11.335875203,
+          46.486952506
+        ]
+      },
+      "prlineage": "PROVINCE_BZ",
+      "prname": "odh-mobility-dc-traffic-event-roadworks-bz",
+      "prversion": "5eaa48a068aa33b7602cd77a0ea13f9c402303ff"
+    }
+  ],
+  "limit": 200
+}
