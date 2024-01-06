@@ -1,12 +1,30 @@
 {
     "routes": [
         {
+            "keyword": "v2/flat,event",
+            "service": "mobility",
+            "mapping": {
+                "data.evuuid": "data.id",
+                "data.evstart": "data.start_date",
+                "data.evend": "data.end_date"
+            }
+        },
+        {
             "keyword": "Accommodation",
             "service": "tourism"
         },
         {
             "keyword": "Availability",
             "service": "tourism"
+        },   
+        {
+            "keyword": "/v1/Event?",
+            "service": "tourism",
+            "mapping": {
+                "Items.Id": "data.id",
+                "Items.DateBegin": "data.start_date",
+                "Items.DateEnd": "data.end_date"
+            }
         },
         {
             "keyword": "Event",
@@ -15,15 +33,6 @@
         {
             "keyword": "Venue",
             "service": "tourism"
-        },
-        {
-            "keyword": "v2/flat,event",
-            "service": "mobility",
-            "mapping": {
-                "evuuid": "id",
-                "evstart": "start_date",
-                "evend": "end_date"
-            }
         },
         {
             "keyword": "v2",

@@ -127,7 +127,7 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 			executeRequest: func(method, path string, body []byte) (service.Response, error) {
 				return service.Response{
 					Body: `this is not a valid json`,
-					}, nil
+				}, nil
 			},
 		}
 

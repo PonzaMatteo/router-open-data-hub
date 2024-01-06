@@ -39,7 +39,7 @@ func (r *Router) EntryPoint(path string, method string) (*service.Response, erro
 	if !ok {
 		return r.AttemptRequest(method, path)
 	}
-		
+
 	s := r.serviceTypes[route.Service]
 	response, err := s.ExecuteRequest(method, path, nil)
 	if err != nil {
