@@ -54,7 +54,7 @@ func GetDefault() *Config {
 		return defaultConfig
 	}
 
-	const defaultConfigFile = "config.yaml"
+	const defaultConfigFile = "./../../config.yaml"
 	c, err := FromFile(defaultConfigFile)
 	if err != nil {
 		panic(fmt.Errorf("default configuration is not valid (%s): %w", defaultConfigFile, err))
