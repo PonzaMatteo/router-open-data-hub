@@ -7,7 +7,8 @@ Activities Done:
 
 - Develop further the Mapper class to account for different scenarios
 - Add end-to-end test against open data hub APIs
-- Add possibility to configure application in YAML
+- Add the possibility to configure applications in YAML
+- Started with the Poster Design
 
 Results:
 

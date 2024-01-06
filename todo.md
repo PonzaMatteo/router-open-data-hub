@@ -26,8 +26,6 @@ Mobility
 
 TODOs:
 
-- [ ] allow complex json response
-- [ ] move config.json to root of the project, consider adding support for yaml as it may be more readable. Cool tool to convert json to yaml: <https://github.com/TomWright/dasel>
 - [ ] would be nice to make the whole thing a mini-app that ties together all the poings
   - then we could test end to end (request to the router -> router -> service -> mapper -> response)
 git
