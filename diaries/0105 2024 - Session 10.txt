@@ -7,10 +7,12 @@ Activities Done:
 
 - Make configuration injectable in Router
 - Add logic to ignore casing when finding the service for a given request
+- Cleaned up Router entry point
+- Added more test for Router ensuring most of the logic is covered
 
 Results:
 
-- 
+- Refactored the codebase to separate concerns of different classes better
 
 Difficulties Found:
 
