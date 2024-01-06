@@ -46,7 +46,7 @@ func (m Mapper) extractMapping(inputResponse interface{}) interface{} {
 	case map[string]interface{}:
 
 		outputResponse := make(map[string]interface{})
-		
+
 		for inputKey, value := range inputResponse {
 			switch value := value.(type) {
 			case map[string]interface{}:
@@ -59,13 +59,13 @@ func (m Mapper) extractMapping(inputResponse interface{}) interface{} {
 					extractedValues = append(extractedValues, extractedValue)
 					outputResponse[outputKey] = extractedValues
 				}
-			default:	
+			default:
 				if outputKey, ok := m.mapping[inputKey]; ok {
 					outputResponse[outputKey] = value
 				}
 			}
 		}
-		
+
 		return outputResponse
 	case []interface{}:
 		var outputResponse []interface{}
@@ -84,23 +84,30 @@ func (m Mapper) extractInternalMapping(previousInputKey string, inputResponse in
 
 		outputResponse := make(map[string]interface{})
 		previousOutputKey := ""
-		
+
 		for inputKey, value := range inputResponse {
 			newInputKey := previousInputKey + "." + inputKey
+
 			if outputKey, ok := m.mapping[newInputKey]; ok {
-				newOutputKey := strings.Split(outputKey, ".")[1]
-				previousOutputKey = strings.Split(outputKey, ".")[0]
+				outputKeys := strings.Split(outputKey, ".")
+				newOutputKey := outputKeys[len(outputKeys)-1]
+				if previousOutputKey != "" && previousOutputKey != outputKeys[len(outputKeys)-2] {
+					panic("Error due to different mapping: `" + previousOutputKey+ "` --- `" + outputKeys[len(outputKeys)-2]+"`")
+				}
+				previousOutputKey = outputKeys[len(outputKeys)-2]
 				outputResponse[newOutputKey] = value
+			} else {
+				switch value := value.(type) {
+				case map[string]interface{}:
+					previousOutputKey, output := m.extractInternalMapping(newInputKey, value)
+					if previousOutputKey != "" {
+						outputResponse[previousOutputKey] = output
+					}
+				}
 			}
 		}
-		
+
 		return previousOutputKey, outputResponse
-	// case []interface{}:
-	// 	var outputResponse []interface{}
-	// 	for _, data := range inputResponse {
-	// 		outputResponse = append(outputResponse, m.extractMapping(data))
-	// 	}
-	// 	return outputResponse
 	default:
 		return "", inputResponse
 	}
