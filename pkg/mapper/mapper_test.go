@@ -377,7 +377,7 @@ func TestMapper(t *testing.T) {
 		assert.NoError(t, err)
 		assertEqualJSON(t, expected, actual)
 	})
-	
+
 	t.Run("Read complex JSON response with error", func(t *testing.T) {
 
 		var mapper = EmptyMapper()
@@ -398,7 +398,78 @@ func TestMapper(t *testing.T) {
 			  }
 			`)
 		})
-		
+
+	})
+
+	//NEW
+
+	t.Run("Read tourism data list", func(t *testing.T) {
+
+		var mapper = EmptyMapper()
+
+		mapper.AddMapping("Items.Id", "test.id")
+		mapper.AddMapping("Items.DateBegin", "test.start_date")
+		mapper.AddMapping("Items.DateEnd", "test.end_date")
+		mapper.AddMapping("Items.Active", "test.active")
+		mapper.AddMapping("Items.ODHTags", "test.odhtag")
+		mapper.AddMapping("Items.Mapping", "test.mapping")
+
+		var actual, err = mapper.Transform(`
+		{
+			"Items": [
+			  {
+				"Id": "BFEB2DDB0FD54AC9BC040053A5514A92_REDUCED",
+				"Active": true,
+				"Detail": {
+				  "de": {
+					"Title": "1000-Stufen-Schlucht im Vinschgau"
+				  },
+				  "it": {
+					"Title": "Venosta: La \"valle dei 1000 gradini\""
+				  }
+				},
+				"DateEnd": "2022-06-01T00:00:00",
+				"GpsInfo": [
+				  {
+					"Gpstype": "position",
+					"AltitudeUnitofMeasure": null
+				  }
+				],
+				"LTSTags": null,
+				"Mapping": {},
+				"ODHTags": [],
+				"Latitude": 46.644273,
+				"DateBegin": "2022-06-01T00:00:00",
+				"Districts": [],
+				"EventDate": [
+				  {
+					"To": "2022-06-01T00:00:00",
+					"End": "17:30:00",
+					"From": "2022-06-01T00:00:00"
+				  }
+				]
+			  }
+			]
+		  }
+		`)
+
+		var expected = `
+		{
+			"test": [
+				{
+				"id": "BFEB2DDB0FD54AC9BC040053A5514A92_REDUCED",
+				"end_date": "2022-06-01T00:00:00",
+				"start_date": "2022-06-01T00:00:00",
+				"active": true,
+				"mapping": {},
+				"odhtag": []
+				}
+			]
+		}
+		`
+
+		assert.NoError(t, err)
+		assert.JSONEq(t, expected, actual)
 	})
 }
 
