@@ -1,3 +1,5 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/PonzaMatteo/router-open-data-hub)](https://goreportcard.com/report/github.com/PonzaMatteo/router-open-data-hub)
+
 # router-open-data-hub
 
 Repository for the Router Challenge of OpenDataHub
