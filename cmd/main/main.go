@@ -2,7 +2,8 @@ package main
 
 import (
 	"log"
-	"opendatahubchallenge/pkg/app"
+
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/app"
 )
 
 func main() {

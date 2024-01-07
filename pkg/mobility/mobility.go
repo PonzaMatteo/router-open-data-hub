@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"opendatahubchallenge/pkg/service"
+
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/service"
 )
 
 type MobilityService struct{}

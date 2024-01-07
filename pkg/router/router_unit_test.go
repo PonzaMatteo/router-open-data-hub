@@ -2,10 +2,10 @@ package router
 
 import (
 	"errors"
-	"opendatahubchallenge/pkg/config"
-	"opendatahubchallenge/pkg/service"
 	"testing"
 
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/config"
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/service"
 	"github.com/stretchr/testify/assert"
 )
 

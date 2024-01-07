@@ -2,12 +2,13 @@ package router
 
 import (
 	"log"
-	"opendatahubchallenge/pkg/config"
-	"opendatahubchallenge/pkg/mapper"
-	"opendatahubchallenge/pkg/mobility"
-	"opendatahubchallenge/pkg/service"
-	"opendatahubchallenge/pkg/tourism"
 	"strings"
+
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/config"
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/mapper"
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/mobility"
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/service"
+	"github.com/PonzaMatteo/router-open-data-hub/pkg/tourism"
 )
 
 type Router struct {
