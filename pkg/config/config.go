@@ -2,6 +2,7 @@ package config
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
 	"path"
@@ -54,11 +55,26 @@ func GetDefault() *Config {
 		return defaultConfig
 	}
 
-	const defaultConfigFile = "./../../config.yaml"
+	var defaultConfigFile = locateConfig("config.yaml")
 	c, err := FromFile(defaultConfigFile)
 	if err != nil {
 		panic(fmt.Errorf("default configuration is not valid (%s): %w", defaultConfigFile, err))
 	}
 	defaultConfig = c
 	return defaultConfig
+}
+
+func locateConfig(path string) string {
+	// in the test the current working directory is the file folder
+	// but in the main application it's the module folder. Therefore
+	// the relative path of the configuration is not always the same.
+	for i := 0; i < 5; i++ {
+		if _, err := os.Stat(path); errors.Is(err, os.ErrNotExist) {
+			path = "../" + path
+			continue
+		} else if err == nil {
+			return path
+		}
+	}
+	panic("Failed to found default configuration")
 }
