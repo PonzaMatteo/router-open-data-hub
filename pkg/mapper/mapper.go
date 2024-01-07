@@ -24,7 +24,7 @@ func (m *Mapper) AddMapping(inputKey string, outputKey string) {
 	m.mapping[inputKey] = outputKey
 }
 
-func (m *Mapper) Transform(input string) (string, error) {
+func (m *Mapper) MapJSON(input string) (string, error) {
 	if len(m.mapping) == 0 {
 		return input, nil
 	}
@@ -35,7 +35,7 @@ func (m *Mapper) Transform(input string) (string, error) {
 
 	}
 
-	_, outputResponse := m.transformResponse("", inputResponse)
+	_, outputResponse := m.applyMapping("", inputResponse)
 	var output bytes.Buffer
 	if err := json.NewEncoder(&output).Encode(&outputResponse); err != nil {
 		return "", err
@@ -43,7 +43,7 @@ func (m *Mapper) Transform(input string) (string, error) {
 	return output.String(), nil
 }
 
-func (m *Mapper) transformResponse(previousInputPath string, inputResponse interface{}) (string, interface{}) {
+func (m *Mapper) applyMapping(previousInputPath string, inputResponse interface{}) (string, interface{}) {
 	if outputKey, ok := m.mapping[previousInputPath]; ok {
 		return outputKey, inputResponse
 	}
@@ -54,7 +54,7 @@ func (m *Mapper) transformResponse(previousInputPath string, inputResponse inter
 		currentOutputPath := ""
 
 		for inputKey, input := range inputResponse {
-			outputPath, output := m.transformResponse(determinePath(previousInputPath, inputKey), input)
+			outputPath, output := m.applyMapping(determinePath(previousInputPath, inputKey), input)
 			if outputPath != "" {
 				previousPath, outputKey := splitPath(outputPath)
 				assertSingleOutputPath(currentOutputPath, previousPath)
@@ -68,7 +68,7 @@ func (m *Mapper) transformResponse(previousInputPath string, inputResponse inter
 		var outputKey string
 		for _, v := range inputResponse {
 			var value interface{}
-			outputKey, value = m.transformResponse(previousInputPath, v)
+			outputKey, value = m.applyMapping(previousInputPath, v)
 			extractedValues = append(extractedValues, value)
 		}
 		return outputKey, extractedValues

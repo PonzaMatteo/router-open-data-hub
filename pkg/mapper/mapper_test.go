@@ -16,7 +16,7 @@ func TestMapper(t *testing.T) {
 	t.Run("Empty mapper should return same output as input", func(t *testing.T) {
 
 		var m = EmptyMapper()
-		actual, err := m.Transform(`
+		actual, err := m.MapJSON(`
 		{
 			"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
 		}
@@ -39,7 +39,7 @@ func TestMapper(t *testing.T) {
 		m.AddMapping("evuuid", "id")
 
 		// Act:
-		actual, err := m.Transform(`
+		actual, err := m.MapJSON(`
 		{
 			"evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
 		}
@@ -64,7 +64,7 @@ func TestMapper(t *testing.T) {
 		m.AddMapping("evstart", "start_date")
 		m.AddMapping("evend", "end_date")
 
-		actual, err := m.Transform(`
+		actual, err := m.MapJSON(`
 		{
 			"evend": "2022-05-11 00:00:00.000+0000",
 			"evstart": "2022-05-10 00:00:00.000+0000",
@@ -92,7 +92,7 @@ func TestMapper(t *testing.T) {
 		m.AddMapping("evstart", "start_date")
 		m.AddMapping("evend", "end_date")
 
-		actual, err := m.Transform(`
+		actual, err := m.MapJSON(`
 		{
 			"evend": "2022-05-11 00:00:00.000+0000",
 			"evseriesuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
@@ -122,7 +122,7 @@ func TestMapper(t *testing.T) {
 			"evend":   "end_date",
 		})
 
-		actual, err := m.Transform(`
+		actual, err := m.MapJSON(`
 		{
 			"evend": "2022-05-11 00:00:00.000+0000",
 			"evseriesuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
@@ -154,7 +154,7 @@ func TestMapper(t *testing.T) {
 		inputJson, err := readResponseFromFile("response.json")
 		assert.NoError(t, err)
 
-		actual, err := m.Transform(inputJson)
+		actual, err := m.MapJSON(inputJson)
 		var expected = `
 		{
 			"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e",
@@ -175,7 +175,7 @@ func TestMapper(t *testing.T) {
 		mapper.AddMapping("data.evstart", "test.start_date")
 		mapper.AddMapping("data.evend", "test.end_date")
 
-		var actual, err = mapper.Transform(`
+		var actual, err = mapper.MapJSON(`
 		{
 			"data": {
 				"evend": "2022-05-11 00:00:00.000+0000",
@@ -207,7 +207,7 @@ func TestMapper(t *testing.T) {
 		mapper.AddMapping("data.evuuid", "data.id")
 
 		// Act:
-		var actual, err = mapper.Transform(`
+		var actual, err = mapper.MapJSON(`
 		{
 			"data": [
 			 { "evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
@@ -236,7 +236,7 @@ func TestMapper(t *testing.T) {
 		mapper.AddMapping("evuuid", "id")
 
 		// Act:
-		var actual, err = mapper.Transform(`
+		var actual, err = mapper.MapJSON(`
 		[
 			{ "evuuid": "1c68267f-0182-53e5-a3bd-3940b1f0c47e" },
 			{ "evuuid": "74b0c317-2315-4ead-b45f-4acfce220384" }
@@ -262,7 +262,7 @@ func TestMapper(t *testing.T) {
 		mapper.AddMapping("data.evstart", "test.start_date")
 		mapper.AddMapping("data.evend", "test.end_date")
 
-		var actual, err = mapper.Transform(`
+		var actual, err = mapper.MapJSON(`
 		{
 			"data": [
 				{
@@ -311,7 +311,7 @@ func TestMapper(t *testing.T) {
 		mapper.AddMapping("data.evend", "test.end_date")
 		mapper.AddMapping("data.evmetadata.placeDe", "test.metadata.german")
 
-		var actual, err = mapper.Transform(`
+		var actual, err = mapper.MapJSON(`
 		{
 			"offset": 0,
 			"data": [
@@ -361,7 +361,7 @@ func TestMapper(t *testing.T) {
 		inputJson, err := readResponseFromFile("../../response-samples/mobility-events.json")
 		assert.NoError(t, err)
 
-		actual, err := m.Transform(inputJson)
+		actual, err := m.MapJSON(inputJson)
 		var expected = `
 		{
 			"data": [
@@ -387,7 +387,7 @@ func TestMapper(t *testing.T) {
 		mapper.AddMapping("data.evend", "test.end_date")
 
 		assert.Panics(t, func() {
-			mapper.Transform(`
+			mapper.MapJSON(`
 			{
 				"data": {
 					"evend": "2022-05-11 00:00:00.000+0000",
@@ -401,7 +401,6 @@ func TestMapper(t *testing.T) {
 
 	})
 
-	
 	t.Run("Read complex JSON response that should panic in multiple nested loop", func(t *testing.T) {
 
 		var mapper = EmptyMapper()
@@ -411,7 +410,7 @@ func TestMapper(t *testing.T) {
 		mapper.AddMapping("another-property.data.evend", "another-property.test.end_date")
 
 		assert.Panics(t, func() {
-			mapper.Transform(`
+			mapper.MapJSON(`
 			{
 				"another-property": {
 					"data": {
@@ -440,7 +439,7 @@ func TestMapper(t *testing.T) {
 		mapper.AddMapping("Items.ODHTags", "test.odhtag")
 		mapper.AddMapping("Items.Mapping", "test.mapping")
 
-		var actual, err = mapper.Transform(`
+		var actual, err = mapper.MapJSON(`
 		{
 			"Items": [
 			  {

@@ -20,7 +20,7 @@ func TestRouter(t *testing.T) {
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
 
-		response, err := router.EntryPoint("/v1/Accommodation/2657B7CBCB85380B253D2FBE28AF100E_REDUCED", "GET")
+		response, err := router.RouteRequest("/v1/Accommodation/2657B7CBCB85380B253D2FBE28AF100E_REDUCED", "GET")
 		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
@@ -45,7 +45,7 @@ func TestRouter(t *testing.T) {
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
 
-		response, err := router.EntryPoint(path, method)
+		response, err := router.RouteRequest(path, method)
 		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
@@ -65,7 +65,7 @@ func TestRouter(t *testing.T) {
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
 
-		response, err := router.EntryPoint("/v1/Tag/region", "GET")
+		response, err := router.RouteRequest("/v1/Tag/region", "GET")
 		assert.NoError(t, err)
 
 		assert.Equal(t, 200, response.StatusCode, "Wrong Status Code")
@@ -92,7 +92,7 @@ func TestRouter(t *testing.T) {
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
 
-		response, err := router.EntryPoint(path, method)
+		response, err := router.RouteRequest(path, method)
 		assert.NoError(t, err)
 
 		assert.Equal(t, 404, response.StatusCode, "Wrong Status Code")
@@ -113,7 +113,7 @@ func TestRouter(t *testing.T) {
 		router, err := NewDefaultRouter()
 		assert.NoError(t, err)
 
-		response, err := router.EntryPoint(path, method)
+		response, err := router.RouteRequest(path, method)
 		assert.NoError(t, err)
 
 		assert.Equal(t, 404, response.StatusCode, "Wrong Status Code")

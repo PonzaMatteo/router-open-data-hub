@@ -12,7 +12,7 @@ func TestEndToEndRouter(t *testing.T) {
 		assert.NoError(t, err)
 
 		// https://mobility.api.opendatahub.com/v2/flat%2Cevent/%2A/latest?limit=200&offset=0&where=evuuid.eq.53a6343f-e524-51ea-a280-4cc4c1bc7ff3&shownull=false&distinct=true
-		response, err := r.EntryPoint("/v2/flat,event/*/latest?limit=200&offset=0&where=evuuid.eq.53a6343f-e524-51ea-a280-4cc4c1bc7ff3&shownull=false&distinct=true", "GET")
+		response, err := r.RouteRequest("/v2/flat,event/*/latest?limit=200&offset=0&where=evuuid.eq.53a6343f-e524-51ea-a280-4cc4c1bc7ff3&shownull=false&distinct=true", "GET")
 
 		assert.NoError(t, err)
 		assert.JSONEq(t, `
@@ -35,7 +35,7 @@ func TestEndToEndRouter(t *testing.T) {
 
 		// https://tourism.opendatahub.com/v1/Event?pagenumber=1&idlist=BFEB2DDB0FD54AC9BC040053A5514A92_REDUCED&removenullvalues=false
 
-		response, err := r.EntryPoint("/v1/Event?pagenumber=1&idlist=BFEB2DDB0FD54AC9BC040053A5514A92_REDUCED&removenullvalues=false", "GET")
+		response, err := r.RouteRequest("/v1/Event?pagenumber=1&idlist=BFEB2DDB0FD54AC9BC040053A5514A92_REDUCED&removenullvalues=false", "GET")
 
 		assert.NoError(t, err)
 		assert.JSONEq(t, `

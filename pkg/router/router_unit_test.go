@@ -29,7 +29,7 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		router := NewRouter(testConfig)
 		router.AddService("test_service", ts)
 
-		actual, err := router.EntryPoint("/test_keyword", "GET")
+		actual, err := router.RouteRequest("/test_keyword", "GET")
 		expected := &service.Response{Body: "response from test service"}
 		assert.NoError(t, err)
 		assert.Equal(t, expected, actual)
@@ -56,7 +56,7 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		router.AddService("test_service_1", ts1)
 		router.AddService("test_service", ts)
 
-		response, err := router.EntryPoint(path, method)
+		response, err := router.RouteRequest(path, method)
 		assert.NoError(t, err)
 		assert.Equal(t, "response from test service", response.Body)
 	})
@@ -84,7 +84,7 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		router.AddService("test_service_1", ts1)
 		router.AddService("test_service", ts)
 
-		response, err := router.EntryPoint("/TEST_KEYWORD", "GET")
+		response, err := router.RouteRequest("/TEST_KEYWORD", "GET")
 		assert.NoError(t, err)
 		assert.Equal(t, "response from test service", response.Body)
 
@@ -114,7 +114,7 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		router := NewRouter(testConfigWithMapping)
 		router.AddService("test_service", ts)
 
-		actual, err := router.EntryPoint("/test_keyword", "GET")
+		actual, err := router.RouteRequest("/test_keyword", "GET")
 		expected := `{
 			"id": "1c68267f-0182-53e5-a3bd-3940b1f0c47e"
 		}`
@@ -134,7 +134,7 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		router := NewRouter(testConfigWithMapping)
 		router.AddService("test_service", ts)
 
-		_, err := router.EntryPoint("/test_keyword", "GET")
+		_, err := router.RouteRequest("/test_keyword", "GET")
 		assert.Error(t, err)
 	})
 
@@ -148,7 +148,7 @@ func TestRouterWithInjectedConfiguration(t *testing.T) {
 		router := NewRouter(testConfigWithMapping)
 		router.AddService("test_service", ts)
 
-		_, err := router.EntryPoint("/test_keyword", "GET")
+		_, err := router.RouteRequest("/test_keyword", "GET")
 		assert.Error(t, err)
 	})
 }
