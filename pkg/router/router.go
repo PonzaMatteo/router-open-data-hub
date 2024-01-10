@@ -46,6 +46,7 @@ func (r *Router) RouteRequest(path string, method string) (*service.Response, er
 	if err != nil {
 		return nil, err
 	}
+	log.Println("[router]: received response from service ", route.Service, " status = ", response.StatusCode)
 
 	m := createMapper(route)
 	newBody, err := m.MapJSON(response.Body)
@@ -77,7 +78,7 @@ func (r *Router) attemptRequestUntilFound(method string, path string) (*service.
 			log.Println("[router]: service", id, "responded with error, skip and trying with the next one")
 			continue
 		}
-
+		log.Println("[router]: received response from service ", id, " status = ", response.StatusCode)
 		if response.StatusCode == 200 {
 			return &response, nil
 		}
